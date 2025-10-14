@@ -1,0 +1,29 @@
+@font-face {
+  font-family: 'eorzea';
+  src: url('../font/eorzea.woff') format('woff2'),
+}
+
+* {
+  font-family: "Gowun Batang";
+}
+
+body {
+  color: #eee;
+  background-color: #444;
+}
+
+.eorzea {
+  font-family: "eorzea";
+}
+
+.card {
+  width: 200px;
+}
+
+.nav-item {
+  border-right: 1px solid #fff;
+}
+
+.nav-item:last-child {
+  border-right: none;
+}

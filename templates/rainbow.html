@@ -1,0 +1,24 @@
+{% extends 'root.html' %}
+{% block title %}무지개 :: TestPage{% endblock %}
+{% block content %}
+<div class="container">
+    <h3 class="text-center eorzea">Eorzea Rainbow</h3>
+    <p class="text-center text-white">24시간 이내에 무지개가 뜨는 곳</p>
+{% if data %}
+    <div class="row row-cols-1 row-cols-md-auto g-4 mb-5 justify-content-center">
+    {% for area in data %}
+        <div class="col">
+            <div class="card">
+                <div class="card-body">
+                    <div class="card-text">{{ area[1] }}</div>
+                </div>
+                <div class="card-footer">
+                    <small class="text-body-secondary">{{ area[0] }}</small>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+    </div>
+{% endif %}
+</div>
+{% endblock %}

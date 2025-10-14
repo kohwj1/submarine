@@ -1,0 +1,18 @@
+{% extends 'root.html' %}
+{% block title %}날씨 :: TestPage{% endblock %}
+{% block content %}
+<div class="container d-flex flex-column justify-content-center align-items-center">
+    <h3 class="eorzea">Eorzea Weather</h3>
+    <p class="text-white">각 지역 현재 날씨</p>
+{% if data %}
+    <ul class="list-group list-group-flush">
+        {% for area in data %}
+            <li class="list-group-item d-flex justify-content-between align-items-start">
+                {{ area[0] }}
+                <small class="ms-5">{{ area[1] }}</small>
+            </li>
+        {% endfor %}
+    </ul>
+{% endif %}
+</div>
+{% endblock %}
