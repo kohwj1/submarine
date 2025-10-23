@@ -1,10 +1,13 @@
 from flask import Flask, jsonify, render_template
+from services.patchinfo import patch_info
 from services.weather import get_weather_by_place_name, next_rainbow
 from data.map_data import weather_all
-from apiRoute import api
+from route.api_submarine import api_submarine
+from route.api_weather import api_weather
 
 app = Flask(__name__)
-app.register_blueprint(api)
+app.register_blueprint(api_submarine)
+app.register_blueprint(api_weather)
 
 @app.route('/')
 def index():
@@ -12,7 +15,8 @@ def index():
 
 @app.route('/submarine')
 def page_submarine():
-    return render_template('submarine.html')
+    game_version = patch_info.get('client_version','-')
+    return render_template('submarine.html', patch_info=game_version)
 
 @app.route('/weather')
 def page_weather():
