@@ -9,17 +9,18 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous" defer></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.min.js" integrity="sha384-G/EV+4j2dNv+tEPo3++6LCgdCROaejBqfUeNjuKAiuXbjrxilcCdDz6ZAVfHWe1Y" crossorigin="anonymous" defer></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
     <link href="../static/css/global.css" rel="stylesheet">
-    <link href="../static/css/weather.css" rel="stylesheet">
+    {% block header %}{% endblock %}
     <title>{% block title %}{% endblock %}</title>
 </head>
-<body class="bg-dark text-white">
+<body class="p-5 m-5">
     <nav class="p-3">
         <ul class="nav justify-content-center">
-            <li class="nav-item"><a class="nav-link text-white eorzea" href="/">Index</a></li>
-            <li class="nav-item"><a class="nav-link text-white eorzea" href="/submarine">Submarine</a></li>
-            <li class="nav-item"><a class="nav-link text-white eorzea" href="/weather">Weather</a></li>
-            <li class="nav-item"><a class="nav-link text-white eorzea" href="/rainbow">Rainbow</a></li>
+            <li class="nav-item global-nav"><a class="nav-link eorzea" href="/">Index</a></li>
+            <li class="nav-item global-nav"><a class="nav-link eorzea" href="/submarine">Submarine</a></li>
+            <li class="nav-item global-nav"><a class="nav-link eorzea" href="/weather">Weather</a></li>
+            <li class="nav-item global-nav"><a class="nav-link eorzea" href="/rainbow">Rainbow</a></li>
         </ul>
     </nav>
     {% block content %}
