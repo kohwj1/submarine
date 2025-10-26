@@ -5,38 +5,35 @@
 {% endblock %}
 {% block title %}잠수함 :: TestPage{% endblock %}
 {% block content %}
-<main>
+<div class="container">
+    <h3 class="text-center eorzea">Submarine</h3>
+    <p class="text-center">잠수함 항해도별 해역 목록</p>
     <div>
         <ul class="nav nav-underline mb-3">
             <li class="nav-item">
-                <button class="nav-link active" aria-current="page">창망의 바다 남쪽</button>
+                <button id="region6" data-value="6" class="nav-link submarine-tab active" aria-current="page">창망의 바다 남쪽</button>
             </li>
             <li class="nav-item">
-                <button class="nav-link">자색 바다</button>
+                <button id="region5" data-value="5" class="nav-link submarine-tab">자색 바다</button>
             </li>
             <li class="nav-item">
-                <button class="nav-link">세이렌 해</button>
+                <button id="region4" data-value="4" class="nav-link submarine-tab">세이렌 해</button>
             </li>
             <li class="nav-item">
-                <button class="nav-link">비취 바다</button>
+                <button id="region3" data-value="3" class="nav-link submarine-tab">비취 바다</button>
             </li>
             <li class="nav-item">
-                <button class="nav-link">잿빛 바다</button>
+                <button id="region2" data-value="2" class="nav-link submarine-tab">잿빛 바다</button>
             </li>
             <li class="nav-item">
-                <button class="nav-link">익몰해</button>
+                <button id="region1" data-value="1" class="nav-link submarine-tab">익몰해</button>
             </li>
-            <li class="nav-item me-auto">
-                <small class="nav-link disabled" aria-disabled="true">기준 데이터: v.{{patch_info}}</small>
-            </li>
-            <li>
-                <form class="speed-form">
-                    <div class="input-group mb-3">
-                        <span class="input-group-text">순항 속도</span>
-                        <input class="form-control" id="lvspeed" type="number" value="170" min="1" max="999">
-                        <button class="btn btn-primary">계산하기</button>
-                    </div>
-                </form>
+            <li class="nav-item ms-auto">
+                <div class="input-group mb-3">
+                    <span class="input-group-text">순항 속도</span>
+                    <input class="form-control" id="lvspeed" type="number" value="170" min="1" max="999">
+                    <button id="speed-calculate" class="btn btn-primary">계산하기</button>
+                </div>
             </li>
         </ul>
     </div>
@@ -44,25 +41,15 @@
         <table class="table">
             <thead>
                 <tr>
+                <th scope="col"></th>
                 <th scope="col">섹터명</th>
-                <th scope="col">필요 랭크</th>
                 <th scope="col">탐사 시간</th>
                 <th scope="col">탐사 경험치</th>
                 <th scope="col">발견 해역</th>
                 </tr>
             </thead>
-            <tbody id="submarine-tbody">
-                {% for row in data %}
-                <tr>
-                    <td scope="row">{{row.name}}<br><small>Lv.{{row.reqRank}} 이상</small></td>
-                    <td>{{row.reqRank}}</td>
-                    <td>{{(row.time / 170) | int}}분</td>
-                    <td>{{row.exp}}</td>
-                    <td>{{row.exp}}</td>
-                </tr>
-                {% endfor %}
-            </tbody>
+            <tbody id="submarine-tbody"></tbody>
         </table>
     </div>
-</main>
+</div class="container">
 {% endblock %}
