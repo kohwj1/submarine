@@ -16,13 +16,8 @@ def index():
 
 @app.route('/submarine')
 def page_submarine():
-    game_version = patch_info.get('client_version','-')
-    submarine_region = get_area(6)
-    unlock_list = get_unlock('6')
-    print(submarine_region)
-    print(unlock_list)
-
-    return render_template('submarine.html', patch_info=game_version, data=submarine_region)
+    game_version = patch_info.get('version','-')
+    return render_template('submarine.html', patch_info=game_version)
 
 @app.route('/weather')
 def page_weather():
