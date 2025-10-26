@@ -1,8 +1,68 @@
 {% extends 'root.html' %}
+{% block header %}
+<link href="../static/css/submarine.css" rel="stylesheet">
+<script src="../static/js/submarine.js" defer></script>
+{% endblock %}
 {% block title %}잠수함 :: TestPage{% endblock %}
 {% block content %}
 <main>
-    <p class="text-center">기준 데이터: {{patch_info}}</p>
+    <div>
+        <ul class="nav nav-underline mb-3">
+            <li class="nav-item">
+                <button class="nav-link active" aria-current="page">창망의 바다 남쪽</button>
+            </li>
+            <li class="nav-item">
+                <button class="nav-link">자색 바다</button>
+            </li>
+            <li class="nav-item">
+                <button class="nav-link">세이렌 해</button>
+            </li>
+            <li class="nav-item">
+                <button class="nav-link">비취 바다</button>
+            </li>
+            <li class="nav-item">
+                <button class="nav-link">잿빛 바다</button>
+            </li>
+            <li class="nav-item">
+                <button class="nav-link">익몰해</button>
+            </li>
+            <li class="nav-item me-auto">
+                <small class="nav-link disabled" aria-disabled="true">기준 데이터: v.{{patch_info}}</small>
+            </li>
+            <li>
+                <form class="speed-form">
+                    <div class="input-group mb-3">
+                        <span class="input-group-text">순항 속도</span>
+                        <input class="form-control" id="lvspeed" type="number" value="170" min="1" max="999">
+                        <button class="btn btn-primary">계산하기</button>
+                    </div>
+                </form>
+            </li>
+        </ul>
+    </div>
+    <div>
+        <table class="table">
+            <thead>
+                <tr>
+                <th scope="col">섹터명</th>
+                <th scope="col">필요 랭크</th>
+                <th scope="col">탐사 시간</th>
+                <th scope="col">탐사 경험치</th>
+                <th scope="col">발견 해역</th>
+                </tr>
+            </thead>
+            <tbody id="submarine-tbody">
+                {% for row in data %}
+                <tr>
+                    <td scope="row">{{row.name}}<br><small>Lv.{{row.reqRank}} 이상</small></td>
+                    <td>{{row.reqRank}}</td>
+                    <td>{{(row.time / 170) | int}}분</td>
+                    <td>{{row.exp}}</td>
+                    <td>{{row.exp}}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
 </main>
-
 {% endblock %}

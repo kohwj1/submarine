@@ -1,4 +1,7 @@
 .venv/
 __pycache__
 *.woff
+*.db
 PlaceName.py
+data/api__.py
+.env

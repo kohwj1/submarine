@@ -7,11 +7,6 @@
   font-family: "Gowun Batang";
 }
 
-body {
-  color: #eee;
-  background-color: #444;
-}
-
 .eorzea {
   font-family: "eorzea";
 }
@@ -20,10 +15,10 @@ body {
   width: 200px;
 }
 
-.nav-item {
-  border-right: 1px solid #fff;
+.nav-item.global-nav {
+  border-right: 1px solid #666;
 }
 
-.nav-item:last-child {
+.nav-item:last-child.global-nav {
   border-right: none;
 }

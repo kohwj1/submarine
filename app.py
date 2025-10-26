@@ -1,6 +1,7 @@
 from flask import Flask, jsonify, render_template
 from services.patchinfo import patch_info
 from services.weather import get_weather_by_place_name, next_rainbow
+from services.submarine import get_area, get_unlock
 from data.map_data import weather_all
 from route.api_submarine import api_submarine
 from route.api_weather import api_weather
@@ -16,7 +17,12 @@ def index():
 @app.route('/submarine')
 def page_submarine():
     game_version = patch_info.get('client_version','-')
-    return render_template('submarine.html', patch_info=game_version)
+    submarine_region = get_area(6)
+    unlock_list = get_unlock('6')
+    print(submarine_region)
+    print(unlock_list)
+
+    return render_template('submarine.html', patch_info=game_version, data=submarine_region)
 
 @app.route('/weather')
 def page_weather():

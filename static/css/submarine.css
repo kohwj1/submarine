@@ -1,0 +1,13 @@
+.list-group-item {
+    background: none;
+    color: inherit;
+    width: 600px;
+}
+
+.speed-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 300px;
+    max-width: 60%;
+}
