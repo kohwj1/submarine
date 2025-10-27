@@ -50,13 +50,24 @@ def get_reward_list(areaId):
 
     return {'tier0':list_tier0, 'tier1':list_tier1, 'tier2':list_tier2}
 
-def get_navigate_path(region):
+def get_moving_time(areaFrom, areaTo):
     cur = cursor()
 
-    cur.execute("""SELECT areaTo 
+    cur.execute("""SELECT time 
                 FROM navigation
-                WHERE areaFrom = ?""", (region, ))
-    result = cur.fetchall()
-    navigation_list = [dict(row) for row in result]
+                WHERE areaFrom = ? AND areaTo = ?""", (areaFrom, areaTo))
+    result = cur.fetchone()
+    navigate_time = result[0]
 
-    return navigation_list
+    return navigate_time
+
+def get_explore_time(areaId):
+    cur = cursor()
+
+    cur.execute("""SELECT time 
+                FROM area
+                WHERE areaId = ?""", (areaId, ))
+    result = cur.fetchone()
+    explore_time = result[0]
+
+    return explore_time
