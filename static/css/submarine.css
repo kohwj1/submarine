@@ -12,8 +12,8 @@
     width:50px;
 }
 
-.reward-col{
-    height:fit-content;
+th, td {
+    padding-left:0.85rem !important;
 }
 
 .official-guide {

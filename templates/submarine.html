@@ -1,7 +1,7 @@
 {% extends 'root.html' %}
 {% block header %}
 <link href="../static/css/submarine.css" rel="stylesheet">
-<script src="../static/js/submarine.js" defer></script>
+<link href="../static/css/calculator.css" rel="stylesheet">
 {% endblock %}
 {% block title %}잠수함 :: TestPage{% endblock %}
 {% block content %}
@@ -11,22 +11,22 @@
     <div>
         <ul class="nav nav-underline mb-3">
             <li class="nav-item">
-                <button id="region6" data-value="6" class="nav-link submarine-tab active" aria-current="page">창망의 바다 남쪽</button>
+                <a href="/submarine?region=6" id="region6" data-value="6" class="nav-link submarine-tab">창망의 바다 남쪽</a>
             </li>
             <li class="nav-item">
-                <button id="region5" data-value="5" class="nav-link submarine-tab">자색 바다</button>
+                <a  href="/submarine?region=5" id="region5" data-value="5" class="nav-link submarine-tab">자색 바다</a>
             </li>
             <li class="nav-item">
-                <button id="region4" data-value="4" class="nav-link submarine-tab">세이렌 해</button>
+                <a  href="/submarine?region=4" id="region4" data-value="4" class="nav-link submarine-tab">세이렌 해</a>
             </li>
             <li class="nav-item">
-                <button id="region3" data-value="3" class="nav-link submarine-tab">비취 바다</button>
+                <a  href="/submarine?region=3" id="region3" data-value="3" class="nav-link submarine-tab">비취 바다</a>
             </li>
             <li class="nav-item">
-                <button id="region2" data-value="2" class="nav-link submarine-tab">잿빛 바다</button>
+                <a  href="/submarine?region=2" id="region2" data-value="2" class="nav-link submarine-tab">잿빛 바다</a>
             </li>
             <li class="nav-item">
-                <button id="region1" data-value="1" class="nav-link submarine-tab">익몰해</button>
+                <a  href="/submarine?region=1" id="region1" data-value="1" class="nav-link submarine-tab">익몰해</a>
             </li>
         </ul>
     </div>
@@ -35,11 +35,10 @@
             <caption>사이트 데이터: v.{{patch_info}}</caption>
             <thead>
                 <tr>
-                <th scope="col"></th>
-                <th scope="col">섹터명</th>
+                <th scope="col">해역명</th>
                 <th scope="col">탐사 경험치</th>
                 <th scope="col">탐사 성능 기준
-                    <i class="bi bi-question-circle-fill ms-1 help-icon" data-bs-toggle="popover" data-bs-title="탐사 성능 기준" data-bs-content="잠수함 탐사로 높은 등급의 아이템을 획득하기 위해 필요한 최소 탐사 성능 기준치입니다."></i>
+                    <i class="bi bi-question-circle-fill ms-1 help-icon" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="높은 등급의 아이템을 획득하기 위해 필요한 최소 성능치입니다."></i>
                 </th>
                 <th scope="col">보상 ⭐</th>
                 <th scope="col">보상 ⭐⭐</th>
@@ -47,8 +46,74 @@
                 <th scope="col">발견 해역</th>
                 </tr>
             </thead>
-            <tbody id="submarine-tbody" class="table-group-divider"></tbody>
+            <tbody id="submarine-tbody" class="table-group-divider">
+                {% for row in data %}
+                    <tr class="select-area">
+                        <td class="area-name">{{ row.name }}<br><small>Rank.{{ row.reqRank }}</small></td>
+                        <td>{{ "{:,}".format(row.exp) }}</td>
+                        <td>{{ row.minSpec }}</td>
+                        <td>
+                            {% for item in row.rewards.tier0 %}
+                            <a class="official-guide" href="https://guide.ff14.co.kr/lodestone/db/item/{{ item.itemId }}" target="_blank">{{ item.name }}</a><br>
+                            {% endfor %}
+                        </td>
+                        <td>
+                            {% for item in row.rewards.tier1 %}
+                            <a class="official-guide" href="https://guide.ff14.co.kr/lodestone/db/item/{{ item.itemId }}" target="_blank">{{ item.name }}</a><br>
+                            {% endfor %}
+                        </td>
+                        <td>
+                            {% for item in row.rewards.tier2 %}
+                            <a class="official-guide" href="https://guide.ff14.co.kr/lodestone/db/item/{{ item.itemId }}" target="_blank">{{ item.name }}</a><br>
+                            {% endfor %}
+                        </td>
+                        <td>
+                            {% for area in row.unlock %}
+                                {{ area }}<br>
+                            {% endfor %}
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
         </table>
     </div>
 </div class="container">
+<div class="calculator-icon justify-content-center align-items-center d-flex shadow" id="CalculatorIcon">
+    <i class="bi bi-calculator"></i>
+</div>
+<div class="calculator-window shadow" id="CalculatorWindow">
+    <div class="calculator-header d-flex">
+        <h5 class="eorzea eorzea ms-auto me-auto mb-0">Voyage Time Calculator</h5>
+        <button id="closeCalculator"><i class="bi bi-x"></i></button>
+    </div>
+    <div class="calculator-body">
+        <form id="calculator-form">
+            <div class="mb-3">탐사할 잠수함 해역을 1개 이상 선택해주세요.<i class="bi bi-arrow-clockwise ms-3 reset"></i></div>
+            <div id="selector-div" class="row row-cols-1 row-cols-md-5 g-2">
+                {% for row in data %}
+                    <input type="checkbox" class="btn-check" id="{{ row.areaId }}" autocomplete="off" value="{{ row.areaId }}">
+                    <label for="{{ row.areaId }}" class="area-labels">
+                        <div class="col">
+                            <div class="card h-100" data-value="{{ row.areaId }}">
+                                <div class="card-body">
+                                    <div class="card-text">{{ row.name }}</div>
+                                </div>
+                            </div>
+                        </div>
+                    </label>
+                {% endfor %}
+            </div>
+            <div class="d-flex flex-column speed justify-content-center">
+                <div class="input-group">
+                    <span class="input-group-text">순항 속도</span>
+                    <input id="speed-input" type="number" class="form-control" placeholder="잠수함의 순항 속도를 입력해주세요" value="170" min="1" max="999" required>
+                    <button class="btn btn-outline-primary btn-calculate" type="button" id="btn-calculate">계산하기</button>
+                </div>
+                <div class="mt-3 estimate-time" id="estimate-time">잠수함 해역을 선택해주세요</div>
+            </div>
+        </form>
+
+    </div>
+</div>
+<script src="../static/js/submarine.js"></script>
 {% endblock %}
