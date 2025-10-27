@@ -1,0 +1,64 @@
+.calculator-icon {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: linear-gradient(to right, #001257, #0029ff); /* 아이콘의 배경색을 파란색으로 설정 */
+    font-size: 1.5rem;
+    color: white;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+}
+
+.calculator-window {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 60%;
+    height: 75%;
+    border-radius: 0.85rem;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2); /* 챗봇 창에 그림자를 추가하여 입체감 부여 */
+    display: none;
+    flex-direction: column; /* 챗봇 창 내부 요소들을 세로로 배치 */
+    resize: none; /* 브라우저 기본 리사이즈는 비활성화 */
+}
+
+.calculator-header {
+    padding: 10px; /* 챗봇 헤더의 내부 여백을 10px로 설정 */
+    background: linear-gradient(to right, #001257, #0029ff);
+    color: #fff;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    display: flex; /* 챗봇 헤더 내부 요소들을 플렉스 박스로 설정 */
+    justify-content: space-between; /* 챗봇 헤더 내부 요소들을 양 끝에 배치 */
+    align-items: center; /* 챗봇 헤더 내부 요소들을 수직 중앙 정렬 */
+}
+
+.calculator-body {
+    flex: 1; /* 챗봇 본문이 가능한 모든 공간을 차지하도록 설정 */
+    padding: 10px; /* 챗봇 본문의 내부 여백을 10px로 설정 */
+    display: flex; /* 챗봇 본문 내부 요소들을 플렉스 박스로 설정 */
+    flex-direction: column; /* 챗봇 본문 내부 요소들을 세로로 배치 */
+    overflow: hidden;        /* 내부에서만 스크롤되도록 */
+}
+
+.speed {
+    position: absolute;
+    left: 0px;
+    padding: 10px;
+    bottom: 4rem;
+    width: 100%;
+}
+
+.estimate-time {
+    height: 3rem;
+    padding-left: 0.5rem;
+}
+
+#closeCalculator {
+    border: none;
+    background: none;
+    color: #fff;
+}
