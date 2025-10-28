@@ -44,11 +44,6 @@ function toggleSelector(targetElement) {
     }
 }
 
-/**
- * 현재 시각으로부터 n분 후의 시간을 'YYYY-MM-DD HH:MM' 형식으로 반환합니다.
- * @param {number} minutesToAdd 더할 분(分)의 수
- * @returns {string} 'YYYY-MM-DD HH:MM' 형식의 날짜 문자열
- */
 function calculateArriveTime(minutesToAdd) {
     const now = new Date();
     const futureTimeMs = now.getTime() + (minutesToAdd * 60000);
@@ -68,19 +63,19 @@ document.addEventListener('DOMContentLoaded', function() {
     tabUIrefresh();
 })
 
-document.querySelector('.reset').addEventListener('click', function() {
+document.querySelector('.btn-reset').addEventListener('click', function() {
     for (label of areaLabels) {
         label.classList.remove('text-bg-primary');
     };
     calculateList = [];
-    document.querySelector('.estimate-time').innerHTML = "잠수함 해역을 선택해주세요";
+    document.querySelector('.alert-primary').innerHTML = "잠수함 해역을 선택해주세요";
 })
 
 document.querySelector('.btn-calculate').addEventListener('click', async function() {
     if (calculateList.length == 0) {
         alert("해역을 1개 이상 선택해주세요");
     } else {
-        const estimateArea = document.querySelector('.estimate-time');
+        const estimateArea = document.querySelector('.alert-primary');
         estimateArea.innerHTML = `<div class="spinner-border" role="status">`
         const res = await fetch('/api/submarine/navigate', {
             method: "POST",
@@ -94,11 +89,9 @@ document.querySelector('.btn-calculate').addEventListener('click', async functio
         const durationHour = Math.floor((duration % 1440) / 60);
         const durationMinute = duration % 60;
         estimateArea.innerHTML = `
-        <div class="alert alert-primary">
-            <ul class="list-group list-group-flush">
-                <li class="list-group-item">최적 경로: ${bestRoute.path}</li>
-                <li class="list-group-item">탐사 소요 시간: ${durationDay}일 ${durationHour}시간 ${durationMinute}분 (${calculateArriveTime(duration)} 도착 예정)</li>
-            </ul>
-        </div>`
+            <ul class="m-0">
+                <li>최적 경로: ${bestRoute.path}</li>
+                <li>탐사 소요 시간: ${durationDay}일 ${durationHour}시간 ${durationMinute}분 (${calculateArriveTime(duration)} 도착 예정)</li>
+            </ul>`
     }
 })
