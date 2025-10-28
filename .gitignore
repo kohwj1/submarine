@@ -2,6 +2,7 @@
 __pycache__
 *.woff
 *.db
+*.png
 PlaceName.py
 data/api__.py
 .env
