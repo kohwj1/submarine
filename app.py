@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, redirect
 from services.patchinfo import patch_info
 from services.weather import get_weather_by_place_name, next_rainbow
 import services.submarine as submarine
@@ -17,7 +17,11 @@ def index():
 @app.route('/submarine')
 def page_submarine():
     game_version = patch_info.get('version','-')
-    region_id = request.args.get("region", 6, type=int)
+    region_id = request.args.get("region", type=int)
+
+    if not region_id:
+        return redirect('/submarine?region=6')
+
     area_list = submarine.get_area(region_id)
     unlock_list = submarine.get_unlock(region_id)
 

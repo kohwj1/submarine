@@ -16,7 +16,8 @@
     bottom: 20px;
     right: 20px;
     width: 60%;
-    height: 75%;
+    height: max-content;
+    padding-bottom: 180px;
     border-radius: 0.85rem;
     background-color: #fff;
     box-shadow: 0 4px 8px rgba(0,0,0,0.2); /* 챗봇 창에 그림자를 추가하여 입체감 부여 */
