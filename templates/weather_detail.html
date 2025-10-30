@@ -1,0 +1,42 @@
+{% extends 'root.html' %}
+{% block header %}<link href="../static/css/weather.css" rel="stylesheet">{% endblock %}
+{% block title %}날씨 :: TestPage{% endblock %}
+{% block content %}
+<div>
+    <h3 class="text-center eorzea">Weather</h3>
+    <p class="text-center">각 지역 날씨 예보</p>
+    <button onclick="history.back();">목록으로 가기</button>
+    <div class="container d-flex flex-row justify-content-between">
+        <div class="left-panel d-flex flex-column align-self-center">
+            <h3><ruby>{{ data.name_en }}<rt>{{ data.name_ko }}</rt></ruby></h3>
+            <div class="forecast-msg mt-4">
+                <div class="msg-header">기상 관측 시스템</div>
+                <div class="msg-body">{{ data.forecast_msg }}</div>
+                <div class="msg-deco"><img src="../static/img/msg_deco.png"></div>
+            </div>
+             <div class="pt-5 mt-5">
+                <h5>무지개 예보</h5>
+                <div class="rainbow-forecast">
+                    {% if data.next_rainbow %}
+                        {{ data.name_ko }}의 다음 무지개는<br>{{ data.next_rainbow }}에 나타납니다🌈
+                    {% else %}
+                        당분간 무지개 예보가 없어요 :(
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+        <div class="right-panel">
+            <div>
+                <!-- <h5>날씨 예보</h5> -->
+                <ul class="list-group list-group-flush forecast-list">
+                    {% for row in data.weather_forecast %}
+                    <li class="list-group-item list-group-item d-flex justify-content-between"><span><img class="me-2" src="../static/img/weather/{{ row }}.png">{{ row }}</span><span>yyyy-mm-dd hh:mm:ss</span></li>
+                    {% endfor %}
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+</div>
+<script src="../static/js/weather.js"></script>
+{% endblock %}

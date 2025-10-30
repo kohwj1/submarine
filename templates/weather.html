@@ -2,18 +2,32 @@
 {% block header %}<link href="../static/css/weather.css" rel="stylesheet">{% endblock %}
 {% block title %}날씨 :: TestPage{% endblock %}
 {% block content %}
-<div class="container d-flex flex-column justify-content-center align-items-center">
-    <h3 class="eorzea">Eorzea Weather</h3>
-    <p>각 지역 현재 날씨</p>
-{% if data %}
+<div>
+    <h3 class="text-center eorzea">Weather</h3>
+    <p class="text-center">각 지역 현재 날씨</p>
+    <div class="form-check form-switch mb-3">
+        <input class="form-check-input" type="checkbox" role="switch" id="switchCheck" checked>
+        <label class="form-check-label" for="switchCheckChecked">스포일러 필터<i class="bi bi-question-circle-fill ms-1 help-icon" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="해제 시 모든 지역명이 필터 없이 표시됩니다."></i></label>
+    </div>
     <ul class="list-group list-group-flush">
-        {% for area in data %}
-            <li class="list-group-item d-flex justify-content-between align-items-start">
-                {{ area[0] }}
-                <small class="ms-5">{{ area[1] }}</small>
-            </li>
+        {% for region in data %}
+        <li class="list-group-item d-flex flex-row w-100">
+            <div class="table-header">{{ region.region }}</div>
+        {% for info in region.weather_info %}
+            <div class="table-cell p-2 pe-4 {{ info.category }}">
+                <a href="/weather/detail?id={{ info.id }}" class="d-flex flex-column justify-content-center align-items-center placename">
+                    <div data-bs-toggle="tooltip" data-bs-title="{{ info.weather }}"><img src="../static/img/weather/{{ info.weather }}.png"></div>
+                {% if info.isSpoiler %}
+                    <small class="placename spoiler">{{ info.name_ko }}</small>
+                {% else %}
+                    <small class="placename">{{ info.name_ko }}</small>
+                {% endif %}
+                </a>
+            </div>
+        {% endfor %}
+        </li>
         {% endfor %}
     </ul>
-{% endif %}
 </div>
+<script src="../static/js/weather.js"></script>
 {% endblock %}
