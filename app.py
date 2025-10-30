@@ -1,8 +1,8 @@
 from flask import Flask, render_template, request, redirect
 from services.patchinfo import patch_info
-from services.weather import get_weather_by_place_name, next_rainbow
+from services.weather import get_weather_by_place_name, get_place_name, get_current_weather_list, next_rainbow, combine_weather_msg
 import services.submarine as submarine
-from data.map_data import weather_all
+from data.map_data import weather_map
 from route.api_submarine import api_submarine
 from route.api_weather import api_weather
 
@@ -33,12 +33,28 @@ def page_submarine():
 
 @app.route('/weather')
 def page_weather():
-    weather_list = [[place_name, get_weather_by_place_name(place_name, 1)[0]]for place_name in weather_all]
-    return render_template('weather.html', data=weather_list)
+    weather_v2 = get_current_weather_list()
+    return render_template('weather.html', data=weather_v2)
+
+@app.route('/weather/detail')
+def page_weather_detail():
+    place_id = request.args.get("id", type=int)
+    place_name = get_place_name(place_id)
+    forecast_list = get_weather_by_place_name(place_name, 10)
+    data_info = {
+        'id':place_id,
+        'name_ko':place_name,
+        'name_en':place_name,
+        'forecast_msg':combine_weather_msg(place_name, forecast_list[0], forecast_list[1], forecast_list[2], forecast_list[3]),
+        'weather_forecast': forecast_list,
+        'next_rainbow':next_rainbow(place_name)
+    }
+
+    return render_template('weather_detail.html', data=data_info)
 
 @app.route('/rainbow')
 def page_rainbow():
-    weather_list = [[place_name, next_rainbow(place_name)] for place_name in weather_all if next_rainbow(place_name)]
+    weather_list = [[place.get('name'), next_rainbow(place.get('name'))] for place in weather_map if next_rainbow(place.get('name'))]
     weather_list.sort(key=lambda x:x[1])
     return render_template('rainbow.html', data=weather_list)
 
