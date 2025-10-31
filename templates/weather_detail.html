@@ -5,12 +5,13 @@
 <div>
     <h3 class="text-center eorzea">Weather</h3>
     <p class="text-center">각 지역 날씨 예보</p>
-    <button onclick="history.back();">목록으로 가기</button>
+    <button class="history-back" onclick="history.back();"><i class="bi bi-arrow-left me-2"></i>목록으로 가기</button>
     <div class="container d-flex flex-row justify-content-between">
         <div class="left-panel d-flex flex-column align-self-center">
-            <h3><ruby>{{ data.name_en }}<rt>{{ data.name_ko }}</rt></ruby></h3>
+            <h2 class="eorzea">{{ data.name_en }}<span class="name-ko">{{ data.name_ko }}</span></h3>
             <div class="forecast-msg mt-4">
-                <div class="msg-header">기상 관측 시스템</div>
+                <div class="msg-header"></div>
+                <div class="msg-header-text">기상 관측 시스템</div>
                 <div class="msg-body">{{ data.forecast_msg }}</div>
                 <div class="msg-deco"><img src="../static/img/msg_deco.png"></div>
             </div>
@@ -30,7 +31,7 @@
                 <!-- <h5>날씨 예보</h5> -->
                 <ul class="list-group list-group-flush forecast-list">
                     {% for row in data.weather_forecast %}
-                    <li class="list-group-item list-group-item d-flex justify-content-between"><span><img class="me-2" src="../static/img/weather/{{ row }}.png">{{ row }}</span><span>yyyy-mm-dd hh:mm:ss</span></li>
+                    <li class="list-group-item list-group-item d-flex justify-content-between"><span><img class="me-2" src="../static/img/weather/{{ row.weather }}.png">{{ row.weather }}</span><span>{{ row.time }}</span></li>
                     {% endfor %}
                 </ul>
             </div>

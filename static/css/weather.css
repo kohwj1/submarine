@@ -26,6 +26,20 @@
     filter:blur(5px);
 }
 
+.history-back {
+    border:none;
+    background: none;
+    color: #ccc;
+}
+
+.name-ko {
+    position: absolute;
+    left: 280px;
+    font-size: 3rem;
+    top: 200px;
+    opacity: 0.3;
+}
+
 .map-img {
     background-color: #ccc;
     height: 350px;
@@ -46,20 +60,29 @@
 .msg-header {
     background: linear-gradient(to right, #000000, #00000041);
     width: 250px;
+    height: 25px;
     padding-left: 5px;
     position: relative;
     top: -30px;
+    left: -20px;
+    filter: blur(6px);
+}
+
+.msg-header-text {
+    position: relative;
+    top: -53px;
+    text-shadow: 0 0 #000;
 }
 
 .msg-body {
     position: relative;
-    top: -25px;
+    top: -50px;
     white-space: pre-line;
 }
 
 .msg-deco {
     position: relative;
-    top: -55px;
+    top: -80px;
     left: 445px;
     animation-name: decoFloat;
     animation-duration: 0.4s;
@@ -70,10 +93,10 @@
 
  @keyframes decoFloat {
     0% {
-        top:-55px;
+        top:-80px;
     }
     100% {
-        top:-50px;
+        top:-75px;
     }
 }
 
