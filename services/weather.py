@@ -29,11 +29,11 @@ def get_weather_by_place_name(place_name, step):
 def get_place_name(placeid):
     cur = cursor()
 
-    cur.execute("""SELECT name_ko 
+    cur.execute("""SELECT name_ko, name_en
                 FROM place
                 WHERE id = ?""", (placeid, ))
     result = cur.fetchone()
-    place_name = result[0]
+    place_name = dict(result)
 
     return place_name
 
@@ -75,6 +75,17 @@ def next_rainbow(place_name):
         return None
     return None
 
+def generate_weather_period(t):
+    time_list = [time_convert('lt', timestamp) for timestamp in EorzeaTime.weather_period(step=t)]
+    return time_list
+
+def time_convert(time_type, target_time):
+    if time_type == 'et':
+        converted_time = datetime.fromtimestamp(target_time.get_eorzea_time()).isoformat()
+    else:
+        converted_time = datetime.fromtimestamp(target_time.get_unix_time()).isoformat()
+    
+    return converted_time.replace('T', ' ')
 
 if __name__ == '__main__':
     get_weather_by_place_name('림사 로민사', 10)
