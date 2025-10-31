@@ -75,8 +75,20 @@ def next_rainbow(place_name):
         return None
     return None
 
-def generate_weather_period(t):
-    time_list = [time_convert('lt', timestamp) for timestamp in EorzeaTime.weather_period(step=t)]
+def generate_weather_period(time_type, t):
+    if time_type == 'et':
+        et_hour = EorzeaTime.now().hour
+        print(et_hour)
+
+        if et_hour >=0 and et_hour < 8:
+            time_list = [f"ET {i % 24}:00" for i in range(0, 0 + 8*t, 8)]
+        if et_hour >=8 and et_hour < 16:
+            time_list = [f"ET {i % 24}:00" for i in range(8, 8 + 8*t, 8)]
+        if et_hour >=16 and et_hour < 24:
+            time_list = [f"ET {i % 24}:00" for i in range(16, 16 + 8*t, 8)]
+    
+    else:
+        time_list = [datetime.fromtimestamp(timestamp.get_unix_time()).isoformat().replace('T', ' ') for timestamp in EorzeaTime.weather_period(step=t)]
     return time_list
 
 def time_convert(time_type, target_time):
