@@ -4,7 +4,14 @@
 {% block content %}
 <div>
     <h3 class="text-center eorzea">Weather</h3>
-    <p class="text-center">각 지역 현재 날씨</p>
+    <div class="d-flex justify-content-center align-items-center">
+        <div class="forecast-msg mt-4">
+            <div class="msg-header"></div>
+            <div class="msg-header-text">기상 관측 시스템</div>
+            <div class="msg-body">이곳은 기상 관측 시스템입니다.<br>여러분에게 도움을 드리기 위해<br>기상 정보를 제공하고 있습니다.</div>
+            <div class="msg-deco"><img src="../static/img/msg_deco.png"></div>
+        </div>
+    </div>
     <div class="form-check form-switch mb-3">
         <input class="form-check-input" type="checkbox" role="switch" id="switchCheck" checked>
         <label class="form-check-label" for="switchCheckChecked">스포일러 필터<i class="bi bi-question-circle-fill ms-1 help-icon" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="해제 시 모든 지역명이 필터 없이 표시됩니다."></i></label>
