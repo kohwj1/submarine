@@ -1,10 +1,10 @@
 from flask import Flask, render_template, request, redirect
 from services.patchinfo import patch_info
-from services.weather import get_weather_by_place_name, get_place_name, get_current_weather_list, next_rainbow, combine_weather_msg, generate_weather_period, time_convert
+from services.weather import get_weather_by_place_name, get_place_name, get_current_weather_list, next_rainbow, combine_weather_msg, generate_weather_period, get_current_rainbow_list
 import services.submarine as submarine
-from data.map_data import weather_map
 from route.api_submarine import api_submarine
 from route.api_weather import api_weather
+from collections import defaultdict
 
 app = Flask(__name__)
 app.register_blueprint(api_submarine)
@@ -64,9 +64,17 @@ def page_weather_detail():
 
 @app.route('/rainbow')
 def page_rainbow():
-    weather_list = [[place.get('name'), next_rainbow(place.get('name'))] for place in weather_map if next_rainbow(place.get('name'))]
-    weather_list.sort(key=lambda x:x[1])
-    return render_template('rainbow.html', data=weather_list)
+    rainbow_data = get_current_rainbow_list()
+    grouped_data = defaultdict(list)
+    
+    for item in rainbow_data:
+        time_key = item['time']
+        place_value = item['place']
+        grouped_data[time_key].append(place_value)
+
+    rainbow_list = [{'time': time, 'place': places} for time, places in grouped_data.items()]
+
+    return render_template('rainbow.html', data=rainbow_list)
 
 @app.route("/api/health")
 def health_check():
