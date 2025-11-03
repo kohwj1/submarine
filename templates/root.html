@@ -3,9 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> -->
-    <!-- <link href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&display=swap" rel="stylesheet"> -->
+    <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous" defer></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.min.js" integrity="sha384-G/EV+4j2dNv+tEPo3++6LCgdCROaejBqfUeNjuKAiuXbjrxilcCdDz6ZAVfHWe1Y" crossorigin="anonymous" defer></script>
@@ -14,18 +12,26 @@
     {% block header %}{% endblock %}
     <title>{% block title %}{% endblock %}</title>
 </head>
-<body class="p-5 m-5 mt-0 mb-0">
-    <nav class="p-3">
-        <ul class="nav justify-content-center">
-            <li class="nav-item global-nav"><a class="nav-link eorzea" href="/">Index</a></li>
-            <li class="nav-item global-nav"><a class="nav-link eorzea" href="/submarine">Submarine</a></li>
-            <li class="nav-item global-nav"><a class="nav-link eorzea" href="/weather">Weather</a></li>
-            <li class="nav-item global-nav"><a class="nav-link eorzea" href="/rainbow">Rainbow</a></li>
+<body>
+    <nav class="navbar position-absolute w-100 navbar-expand-lg global-navbar">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item global-nav ps-2 pe-2"><a class="nav-link eorzea" href="/">Index</a></li>
+            <li class="nav-item global-nav ps-2 pe-2"><a class="nav-link eorzea" href="/submarine">Submarine</a></li>
+            <li class="nav-item dropdown global-nav ps-2 pe-2">
+                <a class="nav-link eorzea" role="button" data-bs-toggle="dropdown" aria-expanded="false" href="#">Weather</a>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item eorzea" href="/weather">Weather Now</a></li>
+                    <li><hr class="dropdown-divider"></li>
+                    <li><a class="dropdown-item eorzea" href="/rainbow">Rainbow</a></li>
+                </ul>
+            </li>
         </ul>
     </nav>
+    <div id="blockstart" class="p-5 m-5 mt-0 mb-0">
     {% block content %}
     {% endblock %}
-    <footer class="text-center">
+    </div>
+    <footer class="text-center pb-5">
         <div class="mt-5">기재되어 있는 회사명 · 제품명 · 시스템 이름은 해당 소유자의 상표 또는 등록 상표입니다.</div>
         <div>© 2010 - 2025 SQUARE ENIX CO., LTD. All Rights Reserved. Published in Korea by ACTOZ SOFT CO., LTD.</div>
     </footer>

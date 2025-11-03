@@ -13,7 +13,7 @@
                 <div class="msg-header"></div>
                 <div class="msg-header-text">기상 관측 시스템</div>
                 <div class="msg-body">{{ data.forecast_msg }}</div>
-                <div class="msg-deco"><img src="../static/img/msg_deco.png"></div>
+                <div class="msg-deco"><img src="../static/img/msg_deco.png" alt="skywatcher"></div>
             </div>
              <div class="pt-5 mt-5">
                 <h5>무지개 예보</h5>
@@ -34,7 +34,7 @@
                     </li> -->
                     {% for row in data.weather_forecast %}
                     <li class="list-group-item list-group-item d-flex justify-content-between align-items-center remain-time" style="background: inherit;">
-                        <span class="me-auto weather-ko"><img class="me-2" src="../static/img/weather/{{ row.weather }}.png">{{ row.weather }}</span>
+                        <span class="me-auto weather-ko"><img class="me-2" src="../static/img/weather/{{ row.weather }}.png" alt="{{ row.weather }}">{{ row.weather }}</span>
                         <small class="me-3 hour-et"> {{ row.time.et }} </small>
                         <span class="unix-time">{{ row.time.lt }}</span>
                     </li>
