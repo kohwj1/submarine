@@ -1,5 +1,6 @@
 const areaLabels = document.querySelectorAll('.card.h-100');
 let calculateList = []
+let lowTierRewards = document.querySelectorAll('.tier-hide');
 
 function tabUIrefresh() {
     const url = new URL(window.location.href);
@@ -93,5 +94,11 @@ document.querySelector('.btn-calculate').addEventListener('click', async functio
                 <li>최적 경로: ${bestRoute.path}</li>
                 <li>탐사 소요 시간: ${durationDay}일 ${durationHour}시간 ${durationMinute}분 (${calculateArriveTime(duration)} 도착 예정)</li>
             </ul>`
+    }
+})
+
+document.getElementById('switchCheck').addEventListener('click', function() {
+    for (element of lowTierRewards) {
+        element.classList.toggle('tier-hide')
     }
 })

@@ -31,6 +31,10 @@
         </ul>
     </div>
     <div>
+        <div class="form-check form-switch mb-3">
+            <input class="form-check-input" type="checkbox" role="switch" id="switchCheck" checked>
+            <label class="form-check-label" for="switchCheckChecked">상위 보상만 보기<i class="bi bi-question-circle-fill ms-1 help-icon" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="해제 시 모든 보상이 표시됩니다."></i></label>
+        </div>
         <table class="table table-hover table-striped caption-top">
             <caption>사이트 데이터: v.{{patch_info}}</caption>
             <thead>
@@ -40,9 +44,7 @@
                 <th scope="col">탐사 성능 기준
                     <i class="bi bi-question-circle-fill ms-1 help-icon" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="높은 등급의 아이템을 획득하기 위해 필요한 최소 성능치입니다."></i>
                 </th>
-                <th scope="col">보상 ⭐</th>
-                <th scope="col">보상 ⭐⭐</th>
-                <th scope="col">보상 ⭐⭐⭐</th>
+                <th scope="col">보상</th>
                 <th scope="col">발견 해역</th>
                 </tr>
             </thead>
@@ -53,19 +55,21 @@
                         <td>{{ "{:,}".format(row.exp) }}</td>
                         <td>{{ row.minSpec }}</td>
                         <td>
+                            <div class="tier-hide"> 🥉
                             {% for item in row.rewards.tier0 %}
-                            <a class="official-guide" href="https://guide.ff14.co.kr/lodestone/db/item/{{ item.itemId }}" target="_blank">{{ item.name }}</a><br>
+                                <a class="official-guide tier0" href="https://guide.ff14.co.kr/lodestone/db/item/{{ item.itemId }}" target="_blank">{{ item.name }}</a>,&nbsp;
                             {% endfor %}
-                        </td>
-                        <td>
+                            </div>
+                            <div class="tier-hide"> 🥈
                             {% for item in row.rewards.tier1 %}
-                            <a class="official-guide" href="https://guide.ff14.co.kr/lodestone/db/item/{{ item.itemId }}" target="_blank">{{ item.name }}</a><br>
+                                <a class="official-guide tier1" href="https://guide.ff14.co.kr/lodestone/db/item/{{ item.itemId }}" target="_blank">{{ item.name }}</a>,&nbsp; 
                             {% endfor %}
-                        </td>
-                        <td>
+                            </div>
+                            <div> 🥇
                             {% for item in row.rewards.tier2 %}
-                            <a class="official-guide" href="https://guide.ff14.co.kr/lodestone/db/item/{{ item.itemId }}" target="_blank">{{ item.name }}</a><br>
+                                <a class="official-guide tier2" href="https://guide.ff14.co.kr/lodestone/db/item/{{ item.itemId }}" target="_blank">{{ item.name }}</a>
                             {% endfor %}
+                            </div>
                         </td>
                         <td>
                             {% for area in row.unlock %}

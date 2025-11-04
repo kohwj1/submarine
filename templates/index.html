@@ -1,4 +1,53 @@
-{% extends 'root.html' %}
-{% block title %}TestPage{% endblock %}
-{% block content %}
-{% endblock %}
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.min.js" integrity="sha384-G/EV+4j2dNv+tEPo3++6LCgdCROaejBqfUeNjuKAiuXbjrxilcCdDz6ZAVfHWe1Y" crossorigin="anonymous" defer></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <link href="../static/css/global.css" rel="stylesheet">
+    <link href="../static/css/index.css" rel="stylesheet">
+    <title>TestPage</title>
+</head>
+<body>
+    <div class="dimmed"></div>
+    <div class="main">
+        <div class="container">
+            <div class="d-flex align-items-center justify-content-evenly upper-row">
+                <a href="/submarine" class="opc">
+                    <div class="card h-100">
+                        <img src="../static/img/cover_submarine.png" class="card-img-top" alt="Submarine">
+                        <div class="card-body">
+                            <h5 class="card-title eorzea">Submarine</h5>
+                            <p class="card-text">잠수함 탐사 정보</p>
+                        </div>
+                    </div>
+                </a>
+                <a href="/weather"" class="opc">
+                    <div class="card h-100">
+                        <img src="../static/img/cover_weather.png" class="card-img-top" alt="Weather">
+                        <div class="card-body">
+                            <h5 class="card-title eorzea">Weather</h5>
+                            <p class="card-text">에오르제아 날씨 정보</p>
+                        </div>
+                    </div>
+                </a> 
+            </div>
+            <div class="lower-row">
+                <div class="text-center placeholder-glow" id="eorzea-clock">
+                    <span class="eorzea timetype me-4"></span>
+                    <span class="eorzea" id="timer"></span>            
+                </div>
+                <div class="text-center timetype" id="normal-clock"></div>
+            </div>
+        </div>
+        <footer class="text-center pb-5">
+            <div class="mt-5">기재되어 있는 회사명 · 제품명 · 시스템 이름은 해당 소유자의 상표 또는 등록 상표입니다.</div>
+            <div>© 2010 - 2025 SQUARE ENIX CO., LTD. All Rights Reserved. Published in Korea by ACTOZ SOFT CO., LTD.</div>
+        </footer>
+    </div>
+    <script src="../static/js/index.js"></script>
+</body>

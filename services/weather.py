@@ -91,13 +91,16 @@ def generate_weather_period(time_type, t):
         time_list = [datetime.fromtimestamp(timestamp.get_unix_time()).isoformat().replace('T', ' ') for timestamp in EorzeaTime.weather_period(step=t)]
     return time_list
 
-def time_convert(time_type, target_time):
-    if time_type == 'et':
-        converted_time = datetime.fromtimestamp(target_time.get_eorzea_time()).isoformat()
-    else:
-        converted_time = datetime.fromtimestamp(target_time.get_unix_time()).isoformat()
-    
-    return converted_time.replace('T', ' ')
+def get_current_rainbow_list():
+    place_list = []
+
+    for region in region_category:
+        place_list.extend(get_places(region))
+
+    result = [{'place':place.get('name_ko'), 'time':next_rainbow(place.get('name_ko'))} for place in place_list if next_rainbow(place.get('name_ko'))]
+    result.sort(key=lambda x:x['time'])
+
+    return result
 
 if __name__ == '__main__':
     get_weather_by_place_name('림사 로민사', 10)

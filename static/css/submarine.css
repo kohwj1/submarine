@@ -21,3 +21,7 @@ th, td {
     text-decoration: none;
     color: #000;
 }
+
+.tier-hide {
+    display: none;
+}
