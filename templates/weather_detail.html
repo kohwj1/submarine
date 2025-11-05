@@ -8,7 +8,11 @@
     <button class="history-back" onclick="history.back();"><i class="bi bi-arrow-left me-2"></i>목록으로 가기</button>
     <div class="container d-flex flex-row justify-content-between">
         <div class="left-panel d-flex flex-column align-self-center">
+            {% if data.name_en in unsundered %}
+            <h2 class="unsundered">{{ data.name_en }}<span class="name-ko">{{ data.name_ko }}</span></h3>
+            {% else %}
             <h2 class="eorzea">{{ data.name_en }}<span class="name-ko">{{ data.name_ko }}</span></h3>
+            {% endif %}
             <div class="forecast-msg mt-4">
                 <div class="msg-header"></div>
                 <div class="msg-header-text">기상 관측 시스템</div>

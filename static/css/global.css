@@ -2,6 +2,10 @@
   font-family: 'eorzea';
   src: url('../font/HingashiExtended.woff') format('woff2'),
 }
+@font-face {
+  font-family: 'unsundered';
+  src: url('../font/protoAlphabet.woff2') format('woff2'),
+}
 
 * {
   font-family: "Pretendard";
@@ -17,7 +21,12 @@
 
 .eorzea {
   font-family: "eorzea";
-  font-weight:800;
+  font-weight: 800;
+}
+.unsundered {
+  font-family: "unsundered";
+  font-weight: 800;
+  font-size: 2.7rem;
 }
 
 .card {
