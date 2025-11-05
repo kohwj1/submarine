@@ -34,16 +34,35 @@ def page_submarine():
 @app.route('/submarine-rewards')
 def page_rewards():
     item_data = submarine.get_all_rewards()
-    # grouped_data = defaultdict(list)
+    grouped_data = defaultdict(lambda: defaultdict(list))
     
-    # for item in item_data:
-    #     itemId_key = item['itemId']
-    #     place_value = item['place']
-    #     grouped_data[itemId_key].append(place_value)
+    for item in item_data:
+        key = (item['itemName'], item['id'])
+        region_id = item['regionId']
+        
+        if region_id not in grouped_data[key]:
+            grouped_data[key][region_id] = {
+                'region_name': item['regionName'],
+                'area_name': []
+            }
+        
+        grouped_data[key][region_id]['area_name'].append(item['areaName'])
 
-    # rainbow_list = [{'itemId': time, 'time': time, 'place': places} for time, places in grouped_data.items()]
+    reward_list = []
 
-    return render_template('rewards.html', data=item_data)
+    for (itemName, item_id), regions_data in grouped_data.items():
+        map_list = []
+        
+        for region_id, data in regions_data.items():
+            map_list.append({
+                'region_id': region_id,
+                'region_name': data['region_name'],
+                'area_name': data['area_name']
+            })
+        
+        reward_list.append({'name': itemName, 'id': item_id, 'map': map_list})
+
+    return render_template('rewards.html', data=reward_list, datav2=item_data)
 
 @app.route('/weather')
 def page_weather():

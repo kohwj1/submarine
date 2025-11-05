@@ -1,0 +1,47 @@
+{% extends 'root.html' %}
+{% block header %}
+<link href="../static/css/submarine.css" rel="stylesheet">
+{% endblock %}
+{% block title %}탐사 보상 :: TestPage{% endblock %}
+{% block content %}
+<div class="container">
+    <h3 class="text-center eorzea">Search</h3>
+    <p class="text-center">잠수함 리워드 검색</p>
+    <div class="input-group mb-5 mt-5">
+        <input type="text" class="form-control" placeholder="아이템명으로 검색" aria-label="Username" aria-describedby="basic-addon1">
+        <button class="btn btn-outline-secondary" type="button" id="button-addon2">검색</button>
+    </div>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col" style="width: 30%;">아이템명</th>
+                <th scope="col">탐사 영역<i class="bi bi-question-circle-fill ms-1 help-icon ms-2" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="각 해역명 클릭 시 해역 목록 페이지로 이동합니다."></i></th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for row in data %}
+            <tr>
+                <td>
+                    <a class="item-name" href="https://guide.ff14.co.kr/lodestone/db/item/{{ row.id }}">{{ row.name }}<i class="bi bi-box-arrow-up-right ms-2"></i></a>
+                </td>
+                <td>
+                    <ul class="list-group list-group-flush">
+                        {% for item_row in row.map %}
+                            <li class="d-flex list-group-item area-list">
+                                <h6 class="list_left"><a class="region-name" href="/submarine?region={{ item_row.region_id }}">{{ item_row.region_name }}</a></h6>
+                                <div class="list_right">
+                                    {% for area_row in item_row.area_name %}
+                                        {{ area_row }},&nbsp;
+                                    {% endfor %}
+                                </div>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</div>
+<script src="../static/js/search.js"></script>
+{% endblock %}

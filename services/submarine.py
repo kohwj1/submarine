@@ -71,3 +71,16 @@ def get_explore_time(areaId):
     explore_time = result[0]
 
     return explore_time
+
+def get_all_rewards():
+    cur = cursor()
+
+    cur.execute("""SELECT i.name AS itemName, i.itemId AS id, region.regionId AS regionId, region.name AS regionName, area.name AS areaName
+                FROM items AS i
+                JOIN rewards AS r ON i.itemId = r.itemId
+                JOIN area AS area ON r.areaId = area.areaId
+                JOIN region AS region ON area.regionId = region.regionId""")
+    result = cur.fetchall()
+    item_list = [dict(row) for row in result]
+
+    return item_list
