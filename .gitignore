@@ -1,9 +1,16 @@
+# 가상환경/DB
 .venv/
 data/
 __pycache__
-*.woff
 *.db
+
+# static resources
+*.woff
+*.woff2
 *.png
+
+# 기타 테스트용 툴
 PlaceName.py
 data/api__.py
 .env
+run.bat

@@ -16,13 +16,20 @@
     <nav class="navbar position-absolute w-100 navbar-expand-lg global-navbar">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item global-nav ps-2 pe-2"><a class="nav-link eorzea" href="/">Index</a></li>
-            <li class="nav-item global-nav ps-2 pe-2"><a class="nav-link eorzea" href="/submarine">Submarine</a></li>
+            <li class="nav-item dropdown global-nav ps-2 pe-2">
+                <a class="nav-link eorzea" role="button" data-bs-toggle="dropdown" aria-expanded="false" href="#">Submarine</a>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item eorzea" href="/submarine">Area List<span class="ms-2">Area List</span></a></li>
+                    <li><hr class="dropdown-divider"></li>
+                    <li><a class="dropdown-item eorzea" href="/submarine-rewards">Search<span class="ms-2">Search</span></a></li>
+                </ul>
+            </li>
             <li class="nav-item dropdown global-nav ps-2 pe-2">
                 <a class="nav-link eorzea" role="button" data-bs-toggle="dropdown" aria-expanded="false" href="#">Weather</a>
                 <ul class="dropdown-menu">
-                    <li><a class="dropdown-item eorzea" href="/weather">Weather Now</a></li>
+                    <li><a class="dropdown-item eorzea" href="/weather">Weather Now<span class="ms-2">Weather Now</span></a></li>
                     <li><hr class="dropdown-divider"></li>
-                    <li><a class="dropdown-item eorzea" href="/rainbow">Rainbow</a></li>
+                    <li><a class="dropdown-item eorzea" href="/rainbow">Rainbow<span class="ms-2">Rainbow</span></a></li>
                 </ul>
             </li>
         </ul>
@@ -35,5 +42,6 @@
         <div class="mt-5">기재되어 있는 회사명 · 제품명 · 시스템 이름은 해당 소유자의 상표 또는 등록 상표입니다.</div>
         <div>© 2010 - 2025 SQUARE ENIX CO., LTD. All Rights Reserved. Published in Korea by ACTOZ SOFT CO., LTD.</div>
     </footer>
+    <script src="../static/js/tooltip.js"></script>
 </body>
 </html>

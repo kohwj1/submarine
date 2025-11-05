@@ -1,6 +1,6 @@
 from flask import Flask, render_template, request, redirect
 from services.patchinfo import patch_info
-from services.weather import get_weather_by_place_name, get_place_name, get_current_weather_list, next_rainbow, combine_weather_msg, generate_weather_period, get_current_rainbow_list
+import services.weather as weather
 import services.submarine as submarine
 from route.api_submarine import api_submarine
 from route.api_weather import api_weather
@@ -31,21 +31,54 @@ def page_submarine():
 
     return render_template('submarine.html', patch_info=game_version, data=area_list)
 
+@app.route('/submarine-rewards')
+def page_rewards():
+    item_data = submarine.get_all_rewards()
+    grouped_data = defaultdict(lambda: defaultdict(list))
+    
+    for item in item_data:
+        key = (item['itemName'], item['id'])
+        region_id = item['regionId']
+        
+        if region_id not in grouped_data[key]:
+            grouped_data[key][region_id] = {
+                'region_name': item['regionName'],
+                'area_name': []
+            }
+        
+        grouped_data[key][region_id]['area_name'].append(item['areaName'])
+
+    reward_list = []
+
+    for (itemName, item_id), regions_data in grouped_data.items():
+        map_list = []
+        
+        for region_id, data in regions_data.items():
+            map_list.append({
+                'region_id': region_id,
+                'region_name': data['region_name'],
+                'area_name': data['area_name']
+            })
+        
+        reward_list.append({'name': itemName, 'id': item_id, 'map': map_list})
+
+    return render_template('rewards.html', data=reward_list, datav2=item_data)
+
 @app.route('/weather')
 def page_weather():
-    weather_v2 = get_current_weather_list()
+    weather_v2 = weather.get_current_weather_list()
     return render_template('weather.html', data=weather_v2)
 
 @app.route('/weather/detail')
 def page_weather_detail():
     weather_step = 10
     place_id = request.args.get("id", type=int)
-    place_name_set = get_place_name(place_id)
+    place_name_set = weather.get_place_name(place_id)
     place_name_ko = place_name_set.get('name_ko')
     place_name_en = place_name_set.get('name_en')
-    forecast_list = get_weather_by_place_name(place_name_ko, weather_step)
-    lt_time_list = generate_weather_period('lt', weather_step)
-    et_time_list = generate_weather_period('et', weather_step)
+    forecast_list = weather.get_weather_by_place_name(place_name_ko, weather_step)
+    lt_time_list = weather.generate_weather_period('lt', weather_step)
+    et_time_list = weather.generate_weather_period('et', weather_step)
     weather_forecast = []
 
     for i in range(weather_step):
@@ -55,16 +88,16 @@ def page_weather_detail():
         'id':place_id,
         'name_ko':place_name_ko,
         'name_en':place_name_en,
-        'forecast_msg':combine_weather_msg(place_name_ko, forecast_list[0], forecast_list[1], forecast_list[2], forecast_list[3]),
+        'forecast_msg': weather.combine_weather_msg(place_name_ko, forecast_list[0], forecast_list[1], forecast_list[2], forecast_list[3]),
         'weather_forecast': weather_forecast,
-        'next_rainbow': next_rainbow(place_name_ko)
+        'next_rainbow': weather.next_rainbow(place_name_ko)
     }
 
-    return render_template('weather_detail.html', data=data_info)
+    return render_template('weather_detail.html', data=data_info, unsundered=weather.unsundered)
 
 @app.route('/rainbow')
 def page_rainbow():
-    rainbow_data = get_current_rainbow_list()
+    rainbow_data = weather.get_current_rainbow_list()
     grouped_data = defaultdict(list)
     
     for item in rainbow_data:
