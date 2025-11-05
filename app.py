@@ -52,7 +52,6 @@ def page_weather():
 
 @app.route('/weather/detail')
 def page_weather_detail():
-    unsundered = ['Elpis','Solution Nine','Living Memory']
     weather_step = 10
     place_id = request.args.get("id", type=int)
     place_name_set = weather.get_place_name(place_id)
@@ -75,7 +74,7 @@ def page_weather_detail():
         'next_rainbow': weather.next_rainbow(place_name_ko)
     }
 
-    return render_template('weather_detail.html', data=data_info, unsundered=unsundered)
+    return render_template('weather_detail.html', data=data_info, unsundered=weather.unsundered)
 
 @app.route('/rainbow')
 def page_rainbow():

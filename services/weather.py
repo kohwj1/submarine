@@ -4,6 +4,7 @@ from data.db_connect import cursor
 from data.weather_msg import weather_msg
 
 region_category = ["라노시아", "검은장막 숲", "다날란", "이슈가르드 주변 지역", "기라바니아", "동방 지역", "일사바드 대륙", "투랄 대륙", "노르브란트", "기타", "특수 필드"]
+unsundered = ['Elpis','Solution Nine','Living Memory']
 
 def get_places(region):
     cur = cursor()
