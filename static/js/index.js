@@ -1,6 +1,5 @@
 const etText = document.getElementById('timer');
 const etTextNormal = document.getElementById('normal-clock');
-const timeType = document.querySelector('.eorzea.timetype')
 
 function getEorzeaTime() {
     let timer = setInterval(() => {
@@ -13,7 +12,6 @@ function getEorzeaTime() {
         let eorzeaTime = new Date(epoch + elapsedEorzeaTime);
         let et_hour = String(eorzeaTime.getHours()).padStart(2, '0');
         let et_minute = String(eorzeaTime.getMinutes()).padStart(2, '0');
-        timeType.textContent = "ET";
         etText.textContent = `${et_hour}:${et_minute}`;
         etTextNormal.textContent = `ET ${et_hour}:${et_minute}`;
     }, 1000);

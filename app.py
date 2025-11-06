@@ -12,7 +12,8 @@ app.register_blueprint(api_weather)
 
 @app.route('/')
 def index():
-    return render_template('index.html')
+    now = weather.now_phase()
+    return render_template('index.html', data=now)
 
 @app.route('/submarine')
 def page_submarine():
