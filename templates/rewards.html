@@ -28,11 +28,7 @@
                         {% for item_row in row.map %}
                             <li class="d-flex list-group-item area-list">
                                 <h6 class="list_left"><a class="region-name" href="/submarine?region={{ item_row.region_id }}">{{ item_row.region_name }}</a></h6>
-                                <div class="list_right">
-                                    {% for area_row in item_row.area_name %}
-                                        {{ area_row }},&nbsp;
-                                    {% endfor %}
-                                </div>
+                                <div class="list_right">{{ item_row.area_name }}</div>
                             </li>
                         {% endfor %}
                     </ul>
