@@ -58,7 +58,7 @@ def page_rewards():
             map_list.append({
                 'region_id': region_id,
                 'region_name': data['region_name'],
-                'area_name': data['area_name']
+                'area_name': ', '.join(data['area_name'])
             })
         
         reward_list.append({'name': itemName, 'id': item_id, 'map': map_list})
