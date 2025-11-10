@@ -33,12 +33,12 @@
         <div class="right-panel">
             <div>
                 <ul class="list-group list-group-flush forecast-list">
-                    <!-- <li class="progress" role="progressbar" aria-label="remainTime 1px high" aria-valuenow="1" aria-valuemin="0" aria-valuemax="100" style="height: 3px">
-                        <div id="progress-bar" class="progress-bar progress-bar-striped progress-bar-animated" style="width: 1%"></div>
-                    </li> -->
                     {% for row in data.weather_forecast %}
                     <li class="list-group-item list-group-item d-flex justify-content-between align-items-center remain-time" style="background: inherit;">
-                        <span class="me-auto weather-ko"><img class="me-2" src="../static/img/weather/{{ row.weather }}.png" alt="{{ row.weather }}">{{ row.weather }}</span>
+                        <span class="me-auto weather-ko">
+                            <img class="me-2" src="../static/img/weather/{{ row.weather }}.png" alt="{{ row.weather }}">{{ row.weather }}
+                            <small class="ms-2 next-weather-time"></small>
+                        </span>
                         <small class="me-3 hour-et"> {{ row.time.et }} </small>
                         <span class="unix-time">{{ row.time.lt }}</span>
                     </li>

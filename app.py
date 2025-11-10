@@ -12,7 +12,8 @@ app.register_blueprint(api_weather)
 
 @app.route('/')
 def index():
-    return render_template('index.html')
+    now = weather.now_phase()
+    return render_template('index.html', data=now)
 
 @app.route('/submarine')
 def page_submarine():
@@ -57,7 +58,7 @@ def page_rewards():
             map_list.append({
                 'region_id': region_id,
                 'region_name': data['region_name'],
-                'area_name': data['area_name']
+                'area_name': ', '.join(data['area_name'])
             })
         
         reward_list.append({'name': itemName, 'id': item_id, 'map': map_list})
@@ -102,7 +103,7 @@ def page_rainbow():
     
     for item in rainbow_data:
         time_key = item['time']
-        place_value = item['place']
+        place_value = {'id':item['id'], 'place':item['place']}
         grouped_data[time_key].append(place_value)
 
     rainbow_list = [{'time': time, 'place': places} for time, places in grouped_data.items()]

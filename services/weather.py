@@ -53,28 +53,13 @@ def get_current_weather_list():
     return result
 
 def combine_weather_msg(place_name, weather_current, weather_s1, weather_s2, weather_s3):
+    print(place_name, weather_current, weather_s1, weather_s2, weather_s3)
     if weather_s1 == weather_s2:
         msg1 = weather_msg.get(weather_s1)[3]
     else:
         msg1 = f"{weather_msg.get(weather_s1)[0]} {weather_msg.get(weather_s2)[1]}"
 
     return f"{place_name}의 현재 날씨는 '{weather_current}'입니다.\n이 시간 이후로 {msg1}\n내일 이 시간에는 {weather_msg.get(weather_s3)[2]}"
-
-
-def next_rainbow(place_name):
-    place = EorzeaPlaceName(place_name, strict=False)
-    the_rainbow = EorzeaRainbow(place_name=place)
-
-    try:
-        for t in EorzeaTime.weather_period(step=80):
-            the_rainbow.append(t, EorzeaWeather.forecast(place, t, raw=True, lang=EorzeaLang.KO))
-            if the_rainbow.is_appear:
-                return datetime.fromtimestamp(t.get_unix_time()).isoformat().replace('T', ' ')
-    except errors.WeatherRateDataError:
-        return None
-    except errors.InvalidEorzeaPlaceName:
-        return None
-    return None
 
 def generate_weather_period(time_type, t):
     if time_type == 'et':
@@ -92,16 +77,31 @@ def generate_weather_period(time_type, t):
         time_list = [datetime.fromtimestamp(timestamp.get_unix_time()).isoformat().replace('T', ' ') for timestamp in EorzeaTime.weather_period(step=t)]
     return time_list
 
+def next_rainbow(place_name):
+    place = EorzeaPlaceName(place_name, strict=False)
+    the_rainbow = EorzeaRainbow(place_name=place)
+
+    try:
+        for t in EorzeaTime.weather_period(step=80):
+            the_rainbow.append(t, EorzeaWeather.forecast(place, t, raw=True, lang=EorzeaLang.KO))
+            if the_rainbow.is_appear:
+                return datetime.fromtimestamp(t.get_unix_time()).isoformat().replace('T', ' ')
+    except errors.WeatherRateDataError:
+        return None
+    except errors.InvalidEorzeaPlaceName:
+        return None
+    return None
+
 def get_current_rainbow_list():
     place_list = []
 
     for region in region_category:
         place_list.extend(get_places(region))
 
-    result = [{'place':place.get('name_ko'), 'time':next_rainbow(place.get('name_ko'))} for place in place_list if next_rainbow(place.get('name_ko'))]
+    result = [{'id':place.get('id'), 'place':place.get('name_ko'), 'time':next_rainbow(place.get('name_ko'))} for place in place_list if next_rainbow(place.get('name_ko'))]
     result.sort(key=lambda x:x['time'])
 
     return result
 
-if __name__ == '__main__':
-    get_weather_by_place_name('림사 로민사', 10)
+def now_phase():
+    return {'guardian':EorzeaTime.now().guardian, 'moon_phase':EorzeaTime.now().moon_phase}
