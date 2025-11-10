@@ -103,7 +103,7 @@ def page_rainbow():
     
     for item in rainbow_data:
         time_key = item['time']
-        place_value = item['place']
+        place_value = {'id':item['id'], 'place':item['place']}
         grouped_data[time_key].append(place_value)
 
     rainbow_list = [{'time': time, 'place': places} for time, places in grouped_data.items()]

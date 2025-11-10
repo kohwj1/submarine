@@ -98,7 +98,7 @@ def get_current_rainbow_list():
     for region in region_category:
         place_list.extend(get_places(region))
 
-    result = [{'place':place.get('name_ko'), 'time':next_rainbow(place.get('name_ko'))} for place in place_list if next_rainbow(place.get('name_ko'))]
+    result = [{'id':place.get('id'), 'place':place.get('name_ko'), 'time':next_rainbow(place.get('name_ko'))} for place in place_list if next_rainbow(place.get('name_ko'))]
     result.sort(key=lambda x:x['time'])
 
     return result
