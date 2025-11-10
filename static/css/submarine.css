@@ -39,3 +39,7 @@ th, td {
 .area-list {
     width: 100%;
 }
+
+.card {
+  width: 200px;
+}
