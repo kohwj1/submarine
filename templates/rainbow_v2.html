@@ -1,0 +1,34 @@
+{% extends 'root.html' %}
+{% block header %}<link href="../static/css/weather.css" rel="stylesheet">{% endblock %}
+{% block title %}무지개 :: TestPage{% endblock %}
+{% block content %}
+<div class="container">
+  <h3 class="text-center eorzea">Eorzea Rainbow</h3>
+  <p class="text-center">24시간 이내에 무지개가 뜨는 곳</p>
+  <table class="table">
+    <thead>
+      <tr>
+      </tr>
+    </thead>
+    <tbody>
+      {% for datetime in data %}
+      <tr>
+        <td>
+          <div class="rainbow-time d-flex my-4 justify-content-center">
+            <div class="me-3">{{ datetime.time }}</div>
+          </div>
+          <div class="d-flex justify-content-center mb-2">
+          {% for area in datetime.place %}
+          <a href="/weather/detail?id={{ area.id }}" class="badge mx-1 my-1 px-2 py-1 text-dark-emphasis bg-light-subtle border border-dark-subtle rounded-pill link-underline link-underline-opacity-0">
+            <span class="place-name">{{ area.place }}</span>
+          </a>
+          {% endfor %}
+          </div>
+        </td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+<script src="../static/js/rainbow.js"></script>
+{% endblock %}
