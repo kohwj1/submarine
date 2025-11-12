@@ -34,6 +34,10 @@ def get_place_name(placeid):
                 FROM place
                 WHERE id = ?""", (placeid, ))
     result = cur.fetchone()
+
+    if not result:
+        return None
+
     place_name = dict(result)
 
     return place_name

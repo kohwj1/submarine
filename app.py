@@ -22,8 +22,12 @@ def page_submarine():
 
     if not region_id:
         return redirect('/submarine?region=6')
-
+    
     area_list = submarine.get_area(region_id)
+
+    if not area_list:
+        return render_template('error.html'), 404
+
     unlock_list = submarine.get_unlock(region_id)
 
     for row in area_list:
@@ -75,6 +79,10 @@ def page_weather_detail():
     weather_step = 10
     place_id = request.args.get("id", type=int)
     place_name_set = weather.get_place_name(place_id)
+    
+    if not place_name_set:
+        return render_template('error.html'), 404
+    
     place_name_ko = place_name_set.get('name_ko')
     place_name_en = place_name_set.get('name_en')
     forecast_list = weather.get_weather_by_place_name(place_name_ko, weather_step)
