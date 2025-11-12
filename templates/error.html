@@ -19,9 +19,8 @@
      <style>
         body {
             background:
-                repeating-linear-gradient(transparent, #000 100px),
-                repeating-linear-gradient(0.25turn, transparent, #000 100px),
-                url('../static/img/error_.png')
+                /* url('../static/img/error_.png') */
+                url('../static/img/error__2.png'), #000                
         }
         #footer {
             padding-top: 10rem;
@@ -45,4 +44,10 @@
         <div class="mt-5">기재되어 있는 회사명 · 제품명 · 시스템 이름은 해당 소유자의 상표 또는 등록 상표입니다.</div>
         <div>© 2010 - 2025 SQUARE ENIX CO., LTD. All Rights Reserved. Published in Korea by ACTOZ SOFT CO., LTD.</div>
     </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const bgNum = Math.floor(Math.random() * 2)
+            document.body.style.background = `url("../static/img/error${bgNum}.png"), #000`
+        })
+    </script>
 </body>
