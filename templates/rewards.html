@@ -21,14 +21,18 @@
         {% for row in data %}
             <tr style="display:table-row;">
                 <td>
-                    <a class="item-name" href="https://guide.ff14.co.kr/lodestone/db/item/{{ row.id }}">{{ row.name }}<i class="bi bi-box-arrow-up-right ms-2"></i></a>
+                    <a class="item-name" target="_blank" href="https://guide.ff14.co.kr/lodestone/db/item/{{ row.id }}">{{ row.name }}<i class="bi bi-box-arrow-up-right ms-2"></i></a>
                 </td>
                 <td>
                     <ul class="list-group list-group-flush">
                         {% for item_row in row.map %}
                             <li class="d-flex list-group-item area-list">
                                 <h6 class="list_left"><a class="region-name" href="/submarine?region={{ item_row.region_id }}">{{ item_row.region_name }}</a></h6>
-                                <div class="list_right">{{ item_row.area_name }}</div>
+                                <div class="list_right">
+                                    {% for area_row in item_row.area_name %}
+                                        <span class="badge mx-1 my-1 px-2 py-1 text-dark-emphasis bg-light-subtle border border-dark-subtle rounded-pill">{{ area_row }}</span>
+                                    {% endfor %}
+                                </div>
                             </li>
                         {% endfor %}
                     </ul>

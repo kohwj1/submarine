@@ -57,12 +57,12 @@
                         <td>
                             <div class="tier-hide"> 🥉
                             {% for item in row.rewards.tier0 %}
-                                <a class="official-guide tier0" href="https://guide.ff14.co.kr/lodestone/db/item/{{ item.itemId }}" target="_blank">{{ item.name }}</a>,&nbsp;
+                                <a class="official-guide tier0" href="https://guide.ff14.co.kr/lodestone/db/item/{{ item.itemId }}" target="_blank">{{ item.name }}</a>
                             {% endfor %}
                             </div>
                             <div class="tier-hide"> 🥈
                             {% for item in row.rewards.tier1 %}
-                                <a class="official-guide tier1" href="https://guide.ff14.co.kr/lodestone/db/item/{{ item.itemId }}" target="_blank">{{ item.name }}</a>,&nbsp; 
+                                <a class="official-guide tier1" href="https://guide.ff14.co.kr/lodestone/db/item/{{ item.itemId }}" target="_blank">{{ item.name }}</a>
                             {% endfor %}
                             </div>
                             <div> 🥇
@@ -87,7 +87,7 @@
 </div>
 <div class="calculator-window shadow" id="CalculatorWindow">
     <div class="calculator-header d-flex">
-        <h5 class="eorzea eorzea ms-auto me-auto mb-0">Voyage Time Calculator</h5>
+        <h5 class="eorzea ms-auto me-auto mb-0">Voyage Time Calculator</h5>
         <button id="closeCalculator"><i class="bi bi-x"></i></button>
     </div>
     <div class="calculator-body">
@@ -113,7 +113,7 @@
             <div class="d-flex flex-column speed justify-content-center">
                 <div class="input-group">
                     <span class="input-group-text">순항 속도<i class="bi bi-question-circle-fill ms-1 help-icon" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="순항 속도가 높을수록 탐사에 소요되는 시간이 단축됩니다."></i></span>
-                    <input id="speed-input" type="number" class="form-control" placeholder="잠수함의 순항 속도를 입력해주세요" value="170" min="1" max="999" required>
+                    <input id="speed-input" type="number" class="form-control" placeholder="잠수함의 순항 속도를 입력해주세요" value="173" min="1" max="999" required>
                     <button class="btn btn-outline-primary btn-calculate" type="button" id="btn-calculate"><i class="bi bi-calculator me-1"></i>계산하기</button>
                     <button class="btn btn-outline-danger btn-reset" type="button" id="btn-reset"><i class="bi bi-arrow-clockwise me-1"></i>선택 초기화</button>
                 </div>

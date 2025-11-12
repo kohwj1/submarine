@@ -112,7 +112,12 @@
     color: #555;
 }
 
-.next-weather-time {
+.next-weather-time, .et-convert {
     color: #999;
     font-style: italic;
+}
+
+.place-name {
+    font-size: 1rem;
+    font-weight: 400;
 }

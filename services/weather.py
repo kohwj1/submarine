@@ -34,6 +34,10 @@ def get_place_name(placeid):
                 FROM place
                 WHERE id = ?""", (placeid, ))
     result = cur.fetchone()
+
+    if not result:
+        return None
+
     place_name = dict(result)
 
     return place_name
@@ -53,7 +57,6 @@ def get_current_weather_list():
     return result
 
 def combine_weather_msg(place_name, weather_current, weather_s1, weather_s2, weather_s3):
-    print(place_name, weather_current, weather_s1, weather_s2, weather_s3)
     if weather_s1 == weather_s2:
         msg1 = weather_msg.get(weather_s1)[3]
     else:
