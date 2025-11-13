@@ -118,6 +118,11 @@ def page_rainbow():
 
     return render_template('rainbow.html', data=rainbow_list)
 
+@app.route('/convert')
+def page_convert():
+    return render_template('convert.html')
+
+
 @app.route("/api/health")
 def health_check():
 	return "ok"

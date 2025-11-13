@@ -1,0 +1,22 @@
+@font-face {
+  font-family: 'mabimo';
+  src: url('../font/mabimo.woff') format('woff2'),
+}
+
+.label-eorzea {
+  font-family: "eorzea";
+}
+.label-unsundered {
+  font-family: "unsundered";
+  font-size: 1.2rem;
+}
+
+#userInput {
+    width: 600px;
+    height: 400px;
+    resize: none;
+}
+
+#userInput, #converted {
+    border: 1px dashed #999;
+}
