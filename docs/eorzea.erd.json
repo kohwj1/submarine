@@ -1,0 +1,978 @@
+{
+  "$schema": "https://raw.githubusercontent.com/dineug/erd-editor/main/json-schema/schema.json",
+  "version": "3.0.0",
+  "settings": {
+    "width": 2000,
+    "height": 2000,
+    "scrollTop": -276.2133,
+    "scrollLeft": -400.6485,
+    "zoomLevel": 0.92,
+    "show": 487,
+    "database": 32,
+    "databaseName": "",
+    "canvasType": "ERD",
+    "language": 1,
+    "tableNameCase": 4,
+    "columnNameCase": 2,
+    "bracketType": 1,
+    "relationshipDataTypeSync": true,
+    "relationshipOptimization": false,
+    "columnOrder": [
+      1,
+      2,
+      4,
+      8,
+      16,
+      32,
+      64
+    ],
+    "maxWidthComment": -1,
+    "ignoreSaveSettings": 0
+  },
+  "doc": {
+    "tableIds": [
+      "0glG24wpEIYX_8s_nnVhb"
+    ],
+    "relationshipIds": [],
+    "indexIds": [],
+    "memoIds": [
+      "h9C-y_eel2o3bssNOewXk"
+    ]
+  },
+  "collections": {
+    "tableEntities": {
+      "0glG24wpEIYX_8s_nnVhb": {
+        "id": "0glG24wpEIYX_8s_nnVhb",
+        "name": "place",
+        "comment": "에오르제아 각 지역",
+        "columnIds": [
+          "Fjs1-ZTiuuMNfSeEz8Xb_",
+          "fXhkpKdCam2LuCwiYmwnz",
+          "0-EtwFYQREXBfMldIjYSs",
+          "-u8YZqT9yjiTfsuOmt87l",
+          "V4M_3XwwyL-vT0JKKQtho",
+          "437otXrSwdS3Pp2wktXcP"
+        ],
+        "seqColumnIds": [
+          "Opey6H6OaC9veKtPRmBj-",
+          "rXUooLysMl-SEhOsUChLh",
+          "mon1hi0y2sy4xKTntXLUx",
+          "UZfb6uHesSMeCvGNiKi-g",
+          "ATV76VlCVmXjXa7PkdIhd",
+          "Fjs1-ZTiuuMNfSeEz8Xb_",
+          "fXhkpKdCam2LuCwiYmwnz",
+          "0-EtwFYQREXBfMldIjYSs",
+          "9rbKTsiAAc6JwGn97glq2",
+          "-u8YZqT9yjiTfsuOmt87l",
+          "V4M_3XwwyL-vT0JKKQtho",
+          "437otXrSwdS3Pp2wktXcP",
+          "59MHt4pX1PftAlArfVMaP",
+          "vBhP7ckjVztObaWh0r-hA",
+          "_TUj_SDu0xBKCpmYJAslD",
+          "W3fIKa7QqxXyW1pbk4PAl",
+          "3i5Epes3NBdrUwdZpish0",
+          "yYfD_hX28OacTzqrvrr9F"
+        ],
+        "ui": {
+          "x": 797.521,
+          "y": 405.378,
+          "zIndex": 2,
+          "widthName": 60,
+          "widthComment": 105,
+          "color": ""
+        },
+        "meta": {
+          "updateAt": 1761793399304,
+          "createAt": 1760067301238
+        }
+      },
+      "B9eAez0UogHglqcfbGjvY": {
+        "id": "B9eAez0UogHglqcfbGjvY",
+        "name": "unlock",
+        "comment": "신규 해역 발견",
+        "columnIds": [
+          "7SaO81zme2aJpwtY1J8T2",
+          "9qnkNxQNQeAS5wEzVL16L"
+        ],
+        "seqColumnIds": [
+          "bedj5toWcqLs450xISr23",
+          "ard8KMM1D32g_EVaY_muH",
+          "TonC5RU3L4FgEDxqRbdw5",
+          "uSuc4EH8-po5ssP1T_80A",
+          "6u1vTjr2L_lQVnkovUgWK",
+          "7SaO81zme2aJpwtY1J8T2",
+          "Ca_dC4KVe2-S9od8-cgq2",
+          "GZMlyhiYAcP13bNE-oeZY",
+          "2WcmKDpxQbhRAVd6nxEr3",
+          "9qnkNxQNQeAS5wEzVL16L"
+        ],
+        "ui": {
+          "x": 1450.4881,
+          "y": 452.6019,
+          "zIndex": 76,
+          "widthName": 60,
+          "widthComment": 81,
+          "color": ""
+        },
+        "meta": {
+          "updateAt": 1761626212695,
+          "createAt": 1760067571500
+        }
+      },
+      "FlBBK9NSupChNWm-iUVqg": {
+        "id": "FlBBK9NSupChNWm-iUVqg",
+        "name": "expansion",
+        "comment": "확장팩 정보",
+        "columnIds": [
+          "DCvzPpno9L903Y2dAKkcd",
+          "ShmA8sisqvuKaGkpyk-En"
+        ],
+        "seqColumnIds": [
+          "8X0CqfYW7YPx3NRyoQaIE",
+          "DCvzPpno9L903Y2dAKkcd",
+          "ShmA8sisqvuKaGkpyk-En",
+          "xMATMoafoFDW8gNPKdRxh",
+          "DuunWAJ8kgre7JnAoIEfo",
+          "GmCw8U38W-56NiDjCKVR_"
+        ],
+        "ui": {
+          "x": 485.7273,
+          "y": 464.7717,
+          "zIndex": 107,
+          "widthName": 60,
+          "widthComment": 65,
+          "color": ""
+        },
+        "meta": {
+          "updateAt": 1761627355288,
+          "createAt": 1760076168791
+        }
+      },
+      "HgF5edLvT9UenNUayIv5D": {
+        "id": "HgF5edLvT9UenNUayIv5D",
+        "name": "category",
+        "comment": "맵 카테고리",
+        "columnIds": [
+          "XLyrgzbB9hs62SbsWgDiS",
+          "BCShsVgSQBsb_7BU3m-s2"
+        ],
+        "seqColumnIds": [
+          "XLyrgzbB9hs62SbsWgDiS",
+          "BCShsVgSQBsb_7BU3m-s2"
+        ],
+        "ui": {
+          "x": 1399.6178,
+          "y": 362.1886,
+          "zIndex": 200,
+          "widthName": 60,
+          "widthComment": 65,
+          "color": ""
+        },
+        "meta": {
+          "updateAt": 1761627799856,
+          "createAt": 1761627197697
+        }
+      }
+    },
+    "tableColumnEntities": {
+      "Opey6H6OaC9veKtPRmBj-": {
+        "id": "Opey6H6OaC9veKtPRmBj-",
+        "tableId": "0glG24wpEIYX_8s_nnVhb",
+        "name": "idx",
+        "comment": "목적지 식별자",
+        "dataType": "TEXT",
+        "default": "",
+        "options": 10,
+        "ui": {
+          "keys": 1,
+          "widthName": 60,
+          "widthComment": 77,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1760067430476,
+          "createAt": 1760067308037
+        }
+      },
+      "9rbKTsiAAc6JwGn97glq2": {
+        "id": "9rbKTsiAAc6JwGn97glq2",
+        "tableId": "0glG24wpEIYX_8s_nnVhb",
+        "name": "regionId",
+        "comment": "항해도",
+        "dataType": "TEXT",
+        "default": "",
+        "options": 8,
+        "ui": {
+          "keys": 0,
+          "widthName": 60,
+          "widthComment": 60,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1761206979726,
+          "createAt": 1760067331236
+        }
+      },
+      "437otXrSwdS3Pp2wktXcP": {
+        "id": "437otXrSwdS3Pp2wktXcP",
+        "tableId": "0glG24wpEIYX_8s_nnVhb",
+        "name": "isSpoiler",
+        "comment": "스포일러성 맵 여부 (0: 일반, 1:스포일러 맵)",
+        "dataType": "INTEGER",
+        "default": "",
+        "options": 0,
+        "ui": {
+          "keys": 0,
+          "widthName": 60,
+          "widthComment": 230,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1761793954702,
+          "createAt": 1760067381828
+        }
+      },
+      "59MHt4pX1PftAlArfVMaP": {
+        "id": "59MHt4pX1PftAlArfVMaP",
+        "tableId": "0glG24wpEIYX_8s_nnVhb",
+        "name": "exp",
+        "comment": "탐사 경험치",
+        "dataType": "INTEGER",
+        "default": "0",
+        "options": 8,
+        "ui": {
+          "keys": 0,
+          "widthName": 60,
+          "widthComment": 65,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1760067425293,
+          "createAt": 1760067402772
+        }
+      },
+      "vBhP7ckjVztObaWh0r-hA": {
+        "id": "vBhP7ckjVztObaWh0r-hA",
+        "tableId": "0glG24wpEIYX_8s_nnVhb",
+        "name": "minSpec",
+        "comment": "희귀 보상 획득에 필요한 최소 성능",
+        "dataType": "INTEGER",
+        "default": "",
+        "options": 0,
+        "ui": {
+          "keys": 0,
+          "widthName": 60,
+          "widthComment": 186,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1760076162073,
+          "createAt": 1760067427083
+        }
+      },
+      "TonC5RU3L4FgEDxqRbdw5": {
+        "id": "TonC5RU3L4FgEDxqRbdw5",
+        "tableId": "B9eAez0UogHglqcfbGjvY",
+        "name": "depart_idx",
+        "comment": "탐사 지역",
+        "dataType": "TEXT",
+        "default": "",
+        "options": 0,
+        "ui": {
+          "keys": 0,
+          "widthName": 60,
+          "widthComment": 60,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1760067878772,
+          "createAt": 1760067614380
+        }
+      },
+      "bedj5toWcqLs450xISr23": {
+        "id": "bedj5toWcqLs450xISr23",
+        "tableId": "B9eAez0UogHglqcfbGjvY",
+        "name": "idx",
+        "comment": "목적지 식별자",
+        "dataType": "TEXT",
+        "default": "",
+        "options": 10,
+        "ui": {
+          "keys": 1,
+          "widthName": 60,
+          "widthComment": 77,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1760067621227,
+          "createAt": 1760067621227
+        }
+      },
+      "mon1hi0y2sy4xKTntXLUx": {
+        "id": "mon1hi0y2sy4xKTntXLUx",
+        "tableId": "0glG24wpEIYX_8s_nnVhb",
+        "name": "idx",
+        "comment": "목적지 식별자",
+        "dataType": "TEXT",
+        "default": "",
+        "options": 14,
+        "ui": {
+          "keys": 1,
+          "widthName": 60,
+          "widthComment": 77,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1760067900739,
+          "createAt": 1760067623076
+        }
+      },
+      "Ca_dC4KVe2-S9od8-cgq2": {
+        "id": "Ca_dC4KVe2-S9od8-cgq2",
+        "tableId": "B9eAez0UogHglqcfbGjvY",
+        "name": "arrive",
+        "comment": "발견 지역",
+        "dataType": "TEXT",
+        "default": "",
+        "options": 8,
+        "ui": {
+          "keys": 0,
+          "widthName": 60,
+          "widthComment": 60,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1760068195163,
+          "createAt": 1760067709140
+        }
+      },
+      "GZMlyhiYAcP13bNE-oeZY": {
+        "id": "GZMlyhiYAcP13bNE-oeZY",
+        "tableId": "B9eAez0UogHglqcfbGjvY",
+        "name": "",
+        "comment": "",
+        "dataType": "",
+        "default": "",
+        "options": 10,
+        "ui": {
+          "keys": 1,
+          "widthName": 60,
+          "widthComment": 60,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1760067917935,
+          "createAt": 1760067917935
+        }
+      },
+      "rXUooLysMl-SEhOsUChLh": {
+        "id": "rXUooLysMl-SEhOsUChLh",
+        "tableId": "0glG24wpEIYX_8s_nnVhb",
+        "name": "",
+        "comment": "",
+        "dataType": "",
+        "default": "",
+        "options": 10,
+        "ui": {
+          "keys": 1,
+          "widthName": 60,
+          "widthComment": 60,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1760067918190,
+          "createAt": 1760067918190
+        }
+      },
+      "ard8KMM1D32g_EVaY_muH": {
+        "id": "ard8KMM1D32g_EVaY_muH",
+        "tableId": "B9eAez0UogHglqcfbGjvY",
+        "name": "idx",
+        "comment": "목적지 식별자",
+        "dataType": "TEXT",
+        "default": "",
+        "options": 14,
+        "ui": {
+          "keys": 1,
+          "widthName": 60,
+          "widthComment": 77,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1760067930484,
+          "createAt": 1760067930484
+        }
+      },
+      "UZfb6uHesSMeCvGNiKi-g": {
+        "id": "UZfb6uHesSMeCvGNiKi-g",
+        "tableId": "0glG24wpEIYX_8s_nnVhb",
+        "name": "idx",
+        "comment": "목적지 식별자",
+        "dataType": "TEXT",
+        "default": "",
+        "options": 14,
+        "ui": {
+          "keys": 1,
+          "widthName": 60,
+          "widthComment": 77,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1760067946547,
+          "createAt": 1760067946547
+        }
+      },
+      "2WcmKDpxQbhRAVd6nxEr3": {
+        "id": "2WcmKDpxQbhRAVd6nxEr3",
+        "tableId": "B9eAez0UogHglqcfbGjvY",
+        "name": "",
+        "comment": "",
+        "dataType": "",
+        "default": "",
+        "options": 10,
+        "ui": {
+          "keys": 1,
+          "widthName": 60,
+          "widthComment": 60,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1760067954741,
+          "createAt": 1760067954741
+        }
+      },
+      "_TUj_SDu0xBKCpmYJAslD": {
+        "id": "_TUj_SDu0xBKCpmYJAslD",
+        "tableId": "0glG24wpEIYX_8s_nnVhb",
+        "name": "",
+        "comment": "",
+        "dataType": "",
+        "default": "",
+        "options": 8,
+        "ui": {
+          "keys": 0,
+          "widthName": 60,
+          "widthComment": 60,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1760067956573,
+          "createAt": 1760067956573
+        }
+      },
+      "ATV76VlCVmXjXa7PkdIhd": {
+        "id": "ATV76VlCVmXjXa7PkdIhd",
+        "tableId": "0glG24wpEIYX_8s_nnVhb",
+        "name": "expansionId",
+        "comment": "확장팩 식별자",
+        "dataType": "INTEGER",
+        "default": "",
+        "options": 14,
+        "ui": {
+          "keys": 1,
+          "widthName": 66,
+          "widthComment": 77,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1761626299390,
+          "createAt": 1760067969955
+        }
+      },
+      "6u1vTjr2L_lQVnkovUgWK": {
+        "id": "6u1vTjr2L_lQVnkovUgWK",
+        "tableId": "B9eAez0UogHglqcfbGjvY",
+        "name": "departure",
+        "comment": "탐사 지역",
+        "dataType": "TEXT",
+        "default": "",
+        "options": 8,
+        "ui": {
+          "keys": 0,
+          "widthName": 60,
+          "widthComment": 60,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1760068049964,
+          "createAt": 1760067970829
+        }
+      },
+      "uSuc4EH8-po5ssP1T_80A": {
+        "id": "uSuc4EH8-po5ssP1T_80A",
+        "tableId": "B9eAez0UogHglqcfbGjvY",
+        "name": "idx",
+        "comment": "",
+        "dataType": "INTEGER",
+        "default": "",
+        "options": 9,
+        "ui": {
+          "keys": 0,
+          "widthName": 60,
+          "widthComment": 60,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1760068196172,
+          "createAt": 1760068027660
+        }
+      },
+      "8X0CqfYW7YPx3NRyoQaIE": {
+        "id": "8X0CqfYW7YPx3NRyoQaIE",
+        "tableId": "FlBBK9NSupChNWm-iUVqg",
+        "name": "Id",
+        "comment": "지역 식별자",
+        "dataType": "INTEGER",
+        "default": "",
+        "options": 14,
+        "ui": {
+          "keys": 1,
+          "widthName": 60,
+          "widthComment": 65,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1761627278328,
+          "createAt": 1760076185629
+        }
+      },
+      "ShmA8sisqvuKaGkpyk-En": {
+        "id": "ShmA8sisqvuKaGkpyk-En",
+        "tableId": "FlBBK9NSupChNWm-iUVqg",
+        "name": "title",
+        "comment": "확장팩 이름",
+        "dataType": "INTEGER",
+        "default": "0",
+        "options": 8,
+        "ui": {
+          "keys": 0,
+          "widthName": 60,
+          "widthComment": 65,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1761626265672,
+          "createAt": 1760076193014
+        }
+      },
+      "xMATMoafoFDW8gNPKdRxh": {
+        "id": "xMATMoafoFDW8gNPKdRxh",
+        "tableId": "FlBBK9NSupChNWm-iUVqg",
+        "name": "itemId",
+        "comment": "아이템 식별자",
+        "dataType": "",
+        "default": "",
+        "options": 0,
+        "ui": {
+          "keys": 0,
+          "widthName": 60,
+          "widthComment": 77,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1760076279536,
+          "createAt": 1760076271855
+        }
+      },
+      "DuunWAJ8kgre7JnAoIEfo": {
+        "id": "DuunWAJ8kgre7JnAoIEfo",
+        "tableId": "FlBBK9NSupChNWm-iUVqg",
+        "name": "itemId",
+        "comment": "아이템 식별자",
+        "dataType": "TEXT",
+        "default": "",
+        "options": 0,
+        "ui": {
+          "keys": 0,
+          "widthName": 60,
+          "widthComment": 77,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1760079434158,
+          "createAt": 1760076290848
+        }
+      },
+      "7SaO81zme2aJpwtY1J8T2": {
+        "id": "7SaO81zme2aJpwtY1J8T2",
+        "tableId": "B9eAez0UogHglqcfbGjvY",
+        "name": "areaFrom",
+        "comment": "탐사 지역",
+        "dataType": "INTEGER",
+        "default": "",
+        "options": 8,
+        "ui": {
+          "keys": 0,
+          "widthName": 60,
+          "widthComment": 60,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1761626210265,
+          "createAt": 1760076337369
+        }
+      },
+      "-u8YZqT9yjiTfsuOmt87l": {
+        "id": "-u8YZqT9yjiTfsuOmt87l",
+        "tableId": "0glG24wpEIYX_8s_nnVhb",
+        "name": "name",
+        "comment": "맵 이름",
+        "dataType": "TEXT",
+        "default": "",
+        "options": 0,
+        "ui": {
+          "keys": 0,
+          "widthName": 60,
+          "widthComment": 60,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1761626315211,
+          "createAt": 1760079097854
+        }
+      },
+      "Fjs1-ZTiuuMNfSeEz8Xb_": {
+        "id": "Fjs1-ZTiuuMNfSeEz8Xb_",
+        "tableId": "0glG24wpEIYX_8s_nnVhb",
+        "name": "id",
+        "comment": "맵 식별자",
+        "dataType": "INTEGER",
+        "default": "",
+        "options": 2,
+        "ui": {
+          "keys": 1,
+          "widthName": 60,
+          "widthComment": 60,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1761793953127,
+          "createAt": 1761207041658
+        }
+      },
+      "W3fIKa7QqxXyW1pbk4PAl": {
+        "id": "W3fIKa7QqxXyW1pbk4PAl",
+        "tableId": "0glG24wpEIYX_8s_nnVhb",
+        "name": "distance",
+        "comment": "탐사 항속 거리",
+        "dataType": "INTEGER",
+        "default": "",
+        "options": 0,
+        "ui": {
+          "keys": 0,
+          "widthName": 60,
+          "widthComment": 81,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1761382164587,
+          "createAt": 1761219908306
+        }
+      },
+      "9qnkNxQNQeAS5wEzVL16L": {
+        "id": "9qnkNxQNQeAS5wEzVL16L",
+        "tableId": "B9eAez0UogHglqcfbGjvY",
+        "name": "areaUnlock",
+        "comment": "발견 지역",
+        "dataType": "INTEGER",
+        "default": "",
+        "options": 8,
+        "ui": {
+          "keys": 0,
+          "widthName": 61,
+          "widthComment": 60,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1761626210265,
+          "createAt": 1761219966094
+        }
+      },
+      "3i5Epes3NBdrUwdZpish0": {
+        "id": "3i5Epes3NBdrUwdZpish0",
+        "tableId": "0glG24wpEIYX_8s_nnVhb",
+        "name": "time",
+        "comment": "탐사 시간",
+        "dataType": "INTEGER",
+        "default": "",
+        "options": 0,
+        "ui": {
+          "keys": 0,
+          "widthName": 60,
+          "widthComment": 60,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1761382167603,
+          "createAt": 1761378073229
+        }
+      },
+      "GmCw8U38W-56NiDjCKVR_": {
+        "id": "GmCw8U38W-56NiDjCKVR_",
+        "tableId": "FlBBK9NSupChNWm-iUVqg",
+        "name": ": 2414",
+        "comment": "",
+        "dataType": "",
+        "default": "",
+        "options": 0,
+        "ui": {
+          "keys": 0,
+          "widthName": 60,
+          "widthComment": 60,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1761627194944,
+          "createAt": 1761627194944
+        }
+      },
+      "XLyrgzbB9hs62SbsWgDiS": {
+        "id": "XLyrgzbB9hs62SbsWgDiS",
+        "tableId": "HgF5edLvT9UenNUayIv5D",
+        "name": "id",
+        "comment": "카테고리 식별자",
+        "dataType": "INTEGER",
+        "default": "",
+        "options": 14,
+        "ui": {
+          "keys": 1,
+          "widthName": 60,
+          "widthComment": 89,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1761627347288,
+          "createAt": 1761627208648
+        }
+      },
+      "BCShsVgSQBsb_7BU3m-s2": {
+        "id": "BCShsVgSQBsb_7BU3m-s2",
+        "tableId": "HgF5edLvT9UenNUayIv5D",
+        "name": "name",
+        "comment": "카테고리 이름",
+        "dataType": "TEXT",
+        "default": "",
+        "options": 0,
+        "ui": {
+          "keys": 0,
+          "widthName": 60,
+          "widthComment": 77,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1761627252720,
+          "createAt": 1761627244168
+        }
+      },
+      "V4M_3XwwyL-vT0JKKQtho": {
+        "id": "V4M_3XwwyL-vT0JKKQtho",
+        "tableId": "0glG24wpEIYX_8s_nnVhb",
+        "name": "category",
+        "comment": "맵 카테고리",
+        "dataType": "TEXT",
+        "default": "",
+        "options": 0,
+        "ui": {
+          "keys": 0,
+          "widthName": 60,
+          "widthComment": 65,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1761793954166,
+          "createAt": 1761627264017
+        }
+      },
+      "DCvzPpno9L903Y2dAKkcd": {
+        "id": "DCvzPpno9L903Y2dAKkcd",
+        "tableId": "FlBBK9NSupChNWm-iUVqg",
+        "name": "id",
+        "comment": "확장팩 식별자",
+        "dataType": "INTEGER",
+        "default": "",
+        "options": 10,
+        "ui": {
+          "keys": 1,
+          "widthName": 60,
+          "widthComment": 77,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1761627353192,
+          "createAt": 1761627303869
+        }
+      },
+      "fXhkpKdCam2LuCwiYmwnz": {
+        "id": "fXhkpKdCam2LuCwiYmwnz",
+        "tableId": "0glG24wpEIYX_8s_nnVhb",
+        "name": "expansion",
+        "comment": "확장팩 버전",
+        "dataType": "TEXT",
+        "default": "",
+        "options": 0,
+        "ui": {
+          "keys": 0,
+          "widthName": 60,
+          "widthComment": 65,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1761793952191,
+          "createAt": 1761627304576
+        }
+      },
+      "yYfD_hX28OacTzqrvrr9F": {
+        "id": "yYfD_hX28OacTzqrvrr9F",
+        "tableId": "0glG24wpEIYX_8s_nnVhb",
+        "name": "isRainbow",
+        "comment": "무지개 예보 제공 여부 (0: 미제공, 1:제공)",
+        "dataType": "INTEGER",
+        "default": "",
+        "options": 0,
+        "ui": {
+          "keys": 0,
+          "widthName": 60,
+          "widthComment": 218,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1761627708999,
+          "createAt": 1761627681920
+        }
+      },
+      "0-EtwFYQREXBfMldIjYSs": {
+        "id": "0-EtwFYQREXBfMldIjYSs",
+        "tableId": "0glG24wpEIYX_8s_nnVhb",
+        "name": "region",
+        "comment": "지역명",
+        "dataType": "TEXT",
+        "default": "",
+        "options": 0,
+        "ui": {
+          "keys": 0,
+          "widthName": 60,
+          "widthComment": 60,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1761741381134,
+          "createAt": 1761741343581
+        }
+      }
+    },
+    "relationshipEntities": {
+      "5OlptnamRrEePwk0ozgvy": {
+        "id": "5OlptnamRrEePwk0ozgvy",
+        "identification": false,
+        "relationshipType": 16,
+        "startRelationshipType": 2,
+        "start": {
+          "tableId": "HgF5edLvT9UenNUayIv5D",
+          "columnIds": [
+            "XLyrgzbB9hs62SbsWgDiS"
+          ],
+          "x": 1399.6178,
+          "y": 414.1886,
+          "direction": 1
+        },
+        "end": {
+          "tableId": "0glG24wpEIYX_8s_nnVhb",
+          "columnIds": [
+            "V4M_3XwwyL-vT0JKKQtho"
+          ],
+          "x": 1300.521,
+          "y": 505.378,
+          "direction": 2
+        },
+        "meta": {
+          "updateAt": 1761627264018,
+          "createAt": 1761627264018
+        }
+      },
+      "8BdoOvsUsfCBqrwJDetxx": {
+        "id": "8BdoOvsUsfCBqrwJDetxx",
+        "identification": false,
+        "relationshipType": 16,
+        "startRelationshipType": 2,
+        "start": {
+          "tableId": "FlBBK9NSupChNWm-iUVqg",
+          "columnIds": [
+            "DCvzPpno9L903Y2dAKkcd"
+          ],
+          "x": 829.7273,
+          "y": 516.7717,
+          "direction": 2
+        },
+        "end": {
+          "tableId": "0glG24wpEIYX_8s_nnVhb",
+          "columnIds": [
+            "fXhkpKdCam2LuCwiYmwnz"
+          ],
+          "x": 936.6514,
+          "y": 495.5519,
+          "direction": 1
+        },
+        "meta": {
+          "updateAt": 1761627304576,
+          "createAt": 1761627304576
+        }
+      }
+    },
+    "indexEntities": {},
+    "indexColumnEntities": {},
+    "memoEntities": {
+      "h9C-y_eel2o3bssNOewXk": {
+        "id": "h9C-y_eel2o3bssNOewXk",
+        "value": "정규화를 하기에는 데이터 수정/삭제 빈도가 거의 없는 정적 테이블이라\n일단 반정규화로 구현해봅니다. 추후 변경 가능..",
+        "ui": {
+          "x": 1339.8352,
+          "y": 404.5796,
+          "zIndex": 15,
+          "width": 411,
+          "height": 100,
+          "color": ""
+        },
+        "meta": {
+          "updateAt": 1761698175714,
+          "createAt": 1761698101138
+        }
+      }
+    }
+  }
+}

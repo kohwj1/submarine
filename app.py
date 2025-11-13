@@ -102,7 +102,7 @@ def page_weather_detail():
         'next_rainbow': weather.next_rainbow(place_name_ko)
     }
 
-    return render_template('weather_detail.html', data=data_info, unsundered=weather.unsundered)
+    return render_template('weather_detail.html', data=data_info, unsundered=weather.unsundered, norvrandt=weather.norvrandt)
 
 @app.route('/rainbow')
 def page_rainbow():
@@ -117,6 +117,11 @@ def page_rainbow():
     rainbow_list = [{'time': time, 'place': places} for time, places in grouped_data.items()]
 
     return render_template('rainbow.html', data=rainbow_list)
+
+@app.route('/convert')
+def page_convert():
+    return render_template('convert.html')
+
 
 @app.route("/api/health")
 def health_check():
