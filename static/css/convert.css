@@ -10,6 +10,14 @@
   font-family: "unsundered";
   font-size: 1.2rem;
 }
+.label-norvrandt {
+  font-family: "norvrandt";
+  font-size: 1.2rem;
+}
+
+.tip {
+  list-style-type: "💡";
+}
 
 #userInput {
     width: 600px;

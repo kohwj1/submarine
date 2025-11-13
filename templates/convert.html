@@ -5,15 +5,26 @@
 {% block content %}
 <div>
   <h3 class="text-center eorzea">Text Converter</h3>
-  <p class="text-center">영문/숫자/히라가나를 아이테리스의 문자로 변환하는 툴입니다.<br><small>💡 쿠가네 문자로 변환하고 싶은 경우, 에오르제아 알파벳을 선택하고 히라가나를 입력해주세요</small></p>
+  <p class="text-center">영문/숫자/히라가나를 아이테리스의 문자로 변환하는 툴입니다.
+    <div class="d-flex justify-content-center">
+      <ul>
+        <li class="tip"><small>쿠가네 문자로 변환하고 싶은 경우, 에오르제아 공용어를 선택하고 히라가나를 입력해주세요</small></li>
+        <li class="tip"><small>쿠가네 숫자는 전각으로 입력해주세요 </small></li>
+      </ul>
+    </div>
+  </p>
   <div class="container d-flex flex-row justify-content-center align-items-center">
     <div class="form-check-inline">
       <input class="form-check-input font-selector" type="radio" name="font-face" id="eorzea" value="eorzea" checked>
       <label class="form-check-label label-eorzea" for="eorzea" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="에오르제아 공용어">Eorzea Alphabet</label>
     </div>
     <div class="form-check-inline">
+      <input class="form-check-input font-selector" type="radio" name="font-face" id="norvrandt" value="norvrandt">
+      <label class="form-check-label label-norvrandt" for="norvrandt" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="제 1세계 공용어">Norvrandt Alphabet</label>
+    </div>
+    <div class="form-check-inline">
       <input class="form-check-input font-selector" type="radio" name="font-face" id="unsundered" value="unsundered">
-      <label class="form-check-label label-unsundered" for="unsundered" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="고대 및 제 9세계 공용어">Proto Alphabet</label>
+      <label class="form-check-label label-unsundered" for="unsundered" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="고대 및 제 9세계 언어">Proto Alphabet</label>
     </div>
   </div>
   <div class="container d-flex flex-row justify-content-evenly mt-3">

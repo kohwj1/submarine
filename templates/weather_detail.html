@@ -10,6 +10,8 @@
         <div class="left-panel d-flex flex-column align-self-center">
             {% if data.name_en in unsundered %}
             <h2 class="unsundered">{{ data.name_en }}<span class="name-ko">{{ data.name_ko }}</span></h3>
+            {% elif data.name_en in norvrandt %}
+            <h2 class="norvrandt">{{ data.name_en }}<span class="name-ko">{{ data.name_ko }}</span></h3>
             {% else %}
             <h2 class="eorzea">{{ data.name_en }}<span class="name-ko">{{ data.name_ko }}</span></h3>
             {% endif %}
