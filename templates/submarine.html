@@ -55,21 +55,9 @@
                         <td>{{ "{:,}".format(row.exp) }}</td>
                         <td>{{ row.minSpec }}</td>
                         <td>
-                            <div class="tier-hide"> 🥉
-                            {% for item in row.rewards.tier0 %}
-                                <a class="official-guide tier0" href="https://guide.ff14.co.kr/lodestone/db/item/{{ item.itemId }}" target="_blank">{{ item.name }}</a>
-                            {% endfor %}
-                            </div>
-                            <div class="tier-hide"> 🥈
-                            {% for item in row.rewards.tier1 %}
-                                <a class="official-guide tier1" href="https://guide.ff14.co.kr/lodestone/db/item/{{ item.itemId }}" target="_blank">{{ item.name }}</a>
-                            {% endfor %}
-                            </div>
-                            <div> 🥇
-                            {% for item in row.rewards.tier2 %}
-                                <a class="official-guide tier2" href="https://guide.ff14.co.kr/lodestone/db/item/{{ item.itemId }}" target="_blank">{{ item.name }}</a>
-                            {% endfor %}
-                            </div>
+                            <div class="tier-hide">🥉 {% for item in row.rewards.tier0 %}<a class="official-guide tier0" href="https://guide.ff14.co.kr/lodestone/db/item/{{ item.itemId }}" target="_blank">{{ item.name }}</a>{% endfor %}</div>
+                            <div class="tier-hide">🥈 {% for item in row.rewards.tier1 %}<a class="official-guide tier1" href="https://guide.ff14.co.kr/lodestone/db/item/{{ item.itemId }}" target="_blank">{{ item.name }}</a>{% endfor %}</div>
+                            <div>🥇 {% for item in row.rewards.tier2 %}<a class="official-guide tier2" href="https://guide.ff14.co.kr/lodestone/db/item/{{ item.itemId }}" target="_blank">{{ item.name }}</a>{% endfor %}</div>
                         </td>
                         <td>
                             {% for area in row.unlock %}
@@ -82,20 +70,20 @@
         </table>
     </div>
 </div>
-<div class="calculator-icon justify-content-center align-items-center d-flex shadow" id="CalculatorIcon">
+<div class="calculator-icon justify-content-center align-items-center d-flex shadow" id="CalculatorIcon" aria-label="calulator-display">
     <i class="bi bi-calculator"></i>
 </div>
 <div class="calculator-window shadow" id="CalculatorWindow">
     <div class="calculator-header d-flex">
         <h5 class="eorzea ms-auto me-auto mb-0">Voyage Time Calculator</h5>
-        <button id="closeCalculator"><i class="bi bi-x"></i></button>
+        <button id="closeCalculator" aria-label="calulator-close"><i class="bi bi-x"></i></button>
     </div>
     <div class="calculator-body">
         <form id="calculator-form">
             <div class="mb-3">탐사할 잠수함 해역을 1개 이상 선택해주세요.</div>
             <div id="selector-div" class="row row-cols-1 row-cols-md-5 g-2">
                 {% for row in data %}
-                    <input type="checkbox" class="btn-check" id="{{ row.areaId }}" autocomplete="off" value="{{ row.areaId }}">
+                    <input type="checkbox" class="btn-check" id="{{ row.areaId }}" autocomplete="off" value="{{ row.areaId }}" name="{{ row.areaId }}">
                     <label for="{{ row.areaId }}" class="area-labels">
                         <div class="col">
                             <div class="card h-100" data-value="{{ row.areaId }}">
@@ -113,7 +101,7 @@
             <div class="d-flex flex-column speed justify-content-center">
                 <div class="input-group">
                     <span class="input-group-text">순항 속도<i class="bi bi-question-circle-fill ms-1 help-icon" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="순항 속도가 높을수록 탐사에 소요되는 시간이 단축됩니다."></i></span>
-                    <input id="speed-input" type="number" class="form-control" placeholder="잠수함의 순항 속도를 입력해주세요" value="173" min="1" max="999" required>
+                    <input id="speed-input" type="number" class="form-control" placeholder="잠수함의 순항 속도를 입력해주세요" value="175" min="1" max="999" required>
                     <button class="btn btn-outline-primary btn-calculate" type="button" id="btn-calculate"><i class="bi bi-calculator me-1"></i>계산하기</button>
                     <button class="btn btn-outline-danger btn-reset" type="button" id="btn-reset"><i class="bi bi-arrow-clockwise me-1"></i>선택 초기화</button>
                 </div>
