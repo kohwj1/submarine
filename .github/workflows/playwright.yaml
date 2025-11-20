@@ -24,20 +24,99 @@ jobs:
         pip install -r requirements.txt
 
     - name: Ensure browsers are installed
-      run: python -m playwright install --with-deps
+      run: python -m playwright install chromium webkit --with-deps
 
-    - name: Start Flask Server on Port 5000
+    - name: Initialize Database
       run: |
-        echo "Starting Flask server on port 5000..."
+        sqlite3 $DATABASE <<'EOF'
+
+        CREATE TABLE area
+        (
+          areaId   TEXT    NOT NULL UNIQUE,
+          regionId INTEGER NOT NULL,
+          name     TEXT    NULL    ,
+          reqRank  INTEGER NOT NULL,
+          exp      INTEGER NOT NULL DEFAULT 0,
+          minSpec  INTEGER NULL    ,
+          distance INTEGER NULL    ,
+          time     INTEGER NULL
+        );
+
+        CREATE TABLE navigation
+        (
+          areaFrom TEXT    NOT NULL,
+          areaTo   TEXT    NOT NULL,
+          distance INTEGER NULL    ,
+          time     INTEGER NULL
+        );
+
+        CREATE TABLE unlock
+        (
+          areaFrom   TEXT NOT NULL,
+          areaUnlock TEXT NOT NULL
+        );
+
+        CREATE TABLE region
+        (
+          regionId INTEGER NOT NULL UNIQUE,
+          name     TEXT    NULL
+        );
+
+        CREATE TABLE rewards
+        (
+          areaId TEXT    NOT NULL,
+          tier   INTEGER NOT NULL DEFAULT 0,
+          itemId TEXT    NULL
+        );
+
+        CREATE TABLE items
+        (
+          itemId TEXT NOT NULL UNIQUE,
+          name   TEXT NULL
+        );
+
+        CREATE TABLE place
+        (
+          id        INTEGER NULL    ,
+          expansion TEXT    NULL    ,
+          region    TEXT    NULL    ,
+          name_ko   TEXT    NULL    ,
+          name_en   TEXT    NULL    ,
+          category  TEXT    NULL    ,
+          isSpoiler INTEGER NULL
+        );
+
+        .mode csv
+        .import instance/area.csv area
+        .import instance/navigation.csv navigation
+        .import instance/unlock.csv unlock
+        .import instance/region.csv region
+        .import instance/rewards.csv rewards
+        .import instance/items.csv items
+        .import instance/place.csv place
+
+        .exit
+EOF
+      echo "Database initialized successfully."
+    env:
+        DATABASE: ${{ secrets.DATABASE }}
+    
+    - name: Start Flask Server
+      run: |
+        echo "Starting Flask server..."
         nohup python app.py > server.log 2>&1 &
         sleep 5
         echo "Flask server started. Checking logs..."
         cat server.log
       env:
         FLASK_RUN_PORT: 5000
+        DATABASE: ${{ secrets.DATABASE }}
 
     - name: Run access test
       run: pytest -k test_access.py --tracing=retain-on-failure
+      env:
+        DISCORD: ${{ secrets.DISCORD }}
+        SLACK: ${{ secrets.SLACK }}
       
     - uses: actions/upload-artifact@v4
       if: ${{ !cancelled() }}
