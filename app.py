@@ -123,4 +123,4 @@ def page_convert():
     return render_template('convert.html')
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run()
