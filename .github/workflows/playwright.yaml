@@ -37,7 +37,7 @@ jobs:
         FLASK_RUN_PORT: 5000
 
     - name: Run access test
-      run: pytest test_access.py --tracing=retain-on-failure
+      run: pytest -k test_access.py --tracing=retain-on-failure
       
     - uses: actions/upload-artifact@v4
       if: ${{ !cancelled() }}
