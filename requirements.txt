@@ -4,7 +4,7 @@ charset-normalizer==3.4.4
 click==8.3.0
 colorama==0.4.6
 dotenv==0.9.9
-EorzeaEnv==2.2.11
+EorzeaEnv
 Flask==3.1.2
 greenlet==3.2.4
 idna==3.11
