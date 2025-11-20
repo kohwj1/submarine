@@ -1,0 +1,78 @@
+0,arr,라노시아,림사 로민사,Limsa Lominsa,normal,0
+1,arr,라노시아,중부 라노시아,Middle La Noscea,normal,0
+2,arr,라노시아,저지 라노시아,Lower La Noscea,normal,0
+3,arr,라노시아,동부 라노시아,Eastern La Noscea,normal,0
+4,arr,라노시아,서부 라노시아,Western La Noscea,normal,0
+5,arr,라노시아,고지 라노시아,Upper La Noscea,normal,0
+6,arr,라노시아,외지 라노시아,Outer La Noscea,normal,0
+7,arr,라노시아,늑대우리 부두,Wolves' Den Pier,normal,0
+8,arr,라노시아,안갯빛 마을,Mist,normal,0
+9,arr,라노시아,봉인된 바위섬,Seal Rock,battle,0
+10,arr,검은장막 숲,그리다니아,Gridania,normal,0
+11,arr,검은장막 숲,검은장막 숲 중부삼림,Central Shroud,normal,0
+12,arr,검은장막 숲,검은장막 숲 동부삼림,East Shroud,normal,0
+13,arr,검은장막 숲,검은장막 숲 남부삼림,South Shroud,normal,0
+14,arr,검은장막 숲,검은장막 숲 북부삼림,North Shroud,normal,0
+15,arr,검은장막 숲,라벤더 안식처,The Lavender Beds,normal,0
+16,arr,다날란,울다하,Ul'dah,normal,0
+17,arr,다날란,서부 다날란,Western Thanalan,normal,0
+18,arr,다날란,중부 다날란,Central Thanalan,normal,0
+19,arr,다날란,동부 다날란,Eastern Thanalan,normal,0
+20,arr,다날란,남부 다날란,Southern Thanalan,normal,0
+21,arr,다날란,북부 다날란,Northern Thanalan,normal,0
+22,arr,다날란,하늘잔 마루,The Goblet,normal,0
+23,hw,이슈가르드 주변 지역,이슈가르드,Ishgard,normal,0
+24,hw,이슈가르드 주변 지역,커르다스 중앙고지,Coerthas Central Highlands,normal,0
+25,hw,이슈가르드 주변 지역,커르다스 서부고지,Coerthas Western Highlands,normal,0
+27,hw,이슈가르드 주변 지역,아발라시아 구름바다,The Sea of Clouds,normal,0
+28,hw,이슈가르드 주변 지역,아지스 라,Azys Lla,normal,1
+29,hw,이슈가르드 주변 지역,이딜샤이어,Idyllshire,normal,0
+30,hw,이슈가르드 주변 지역,고지 드라바니아,Forelands,normal,0
+31,hw,이슈가르드 주변 지역,저지 드라바니아,Hinterlands,normal,0
+32,hw,이슈가르드 주변 지역,드라바니아 구름바다,The Churning Mists,normal,0
+33,hw,이슈가르드 주변 지역,디아뎀 제도,The Diadem,battle,0
+34,hw,이슈가르드 주변 지역,영광의 평원,The Fields of Glory,battle,0
+35,hw,이슈가르드 주변 지역,카르테노 평원: 외곽 유적지대,Carteneau Flats: Borderland Ruins,battle,0
+36,sb,기라바니아,랄거의 손길,Rhalgr's Reach,normal,0
+37,sb,기라바니아,기라바니아 변방지대,The Fringes,normal,0
+38,sb,기라바니아,기라바니아 산악지대,The Peaks,normal,0
+39,sb,기라바니아,기라바니아 호반지대,The Lochs,normal,0
+40,sb,동방 지역,쿠가네,くがね,normal,0
+41,sb,동방 지역,시로가네,Shirogane,normal,0
+42,sb,동방 지역,홍옥해,The Ruby Sea,normal,0
+43,sb,동방 지역,얀샤,Yanxia,normal,0
+44,sb,동방 지역,아짐 대초원,The Azim Steppe,normal,0
+45,sb,동방 지역,온살 하카이르,Onsal Hakair,battle,0
+46,sb,동방 지역,도마 도읍지,The Doman Enclave,normal,0
+47,ew,일사바드 대륙,라자한,Radz-at-Han,normal,0
+48,ew,일사바드 대륙,사베네어 섬,Thavnair,normal,0
+49,ew,일사바드 대륙,갈레말드,Garlemald,normal,0
+50,dt,투랄 대륙,툴라이욜라,Tuliyollal,normal,0
+51,dt,투랄 대륙,오르코 파차,Urqopacha,normal,0
+52,dt,투랄 대륙,코자말루 카,Kozama'uka,normal,0
+53,dt,투랄 대륙,야크텔 밀림,Yak T'el,normal,0
+54,dt,투랄 대륙,솔루션 나인,Solution Nine,normal,0
+55,dt,투랄 대륙,샬로니 황야,Shaaloani,normal,0
+56,dt,투랄 대륙,헤리티지 파운드,Heritage Found,normal,0
+57,shb,노르브란트,크리스타리움,The Crystarium,normal,0
+58,shb,노르브란트,율모어,Eulmore,normal,0
+59,shb,노르브란트,레이크랜드,Lakeland,normal,0
+60,shb,노르브란트,콜루시아 섬,Kholusia,normal,0
+61,shb,노르브란트,아므 아랭,Amh Araeng,normal,0
+62,shb,노르브란트,일 메그,Il Mheg,normal,0
+63,shb,노르브란트,라케티카 대삼림,The Rak'tika Greatwood,normal,0
+64,shb,노르브란트,템페스트,Tempest,normal,1
+65,arr,기타,모르도나,Mor Dhona,normal,0
+66,ew,기타,올드 샬레이안,Old Sharlayan,normal,0
+67,ew,기타,라비린토스,Labyrinthos,normal,0
+68,ew,기타,비탄의 바다,Mare Lamentorum,normal,0
+69,ew,기타,울티마 툴레,Ultima Thule,normal,0
+70,ew,기타,엘피스,Elpis,normal,1
+71,dt,기타,리빙 메모리,Living Memory,normal,1
+72,ew,기타,무인도 (이름 없는 섬),Unnamed Island,normal,0
+73,sb,특수 필드,에우레카: 아네모스 지대,Eureka Anemos,battle,0
+74,sb,특수 필드,에우레카: 파고스 지대,Eureka Pagos,battle,0
+75,sb,특수 필드,에우레카: 피로스 지대,Eureka Pyros,battle,0
+76,sb,특수 필드,에우레카: 히다토스 지대,Eureka Hydatos,battle,0
+77,sb,특수 필드,남부 보즈야 전선,Bozjan Southern Front,battle,0
+78,sb,특수 필드,자트노르 고원,Zadnor,battle,0

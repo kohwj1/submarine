@@ -7,7 +7,6 @@ __pycache__
 *.woff
 *.woff2
 *.png
-*.csv
 
 # 기타 테스트용 툴/파일
 instance/api__.py
