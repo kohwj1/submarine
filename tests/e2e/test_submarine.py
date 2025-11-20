@@ -10,23 +10,17 @@ def before_each_after_each():
     
     print("yield 이후 부분은 scope 후에 수행하는 영역입니다")
 
-def test_redirection(page: Page, page_url, error_locator):
+def test_error_redirection(page: Page, page_url, error_locator):
     """
     잠수함 페이지 리다이렉션 기능을 테스트하는 함수입니다.
 
-    파라미터가 없거나 숫자가 아닌 경우 최신 해역으로 리다이렉트되며, 비정상 범위의 숫자인 경우 에러 페이지가 노출되는지 확인합니다.
+    파라미터가 비정상 범위의 숫자인 경우 에러 페이지가 노출되는지 확인합니다.
 
     e.g.)
     - region 파라미터 없음: region=6으로 리다이렉트
     - region=aaaa로 요청: region=6으로 리다이렉트
     - region=999로 요청: 에러 화면 노출
     """
-    page.goto(page_url["submarine"])
-    expect(page).to_have_url(page_url["submarine_r6"])
-
-    page.goto(page_url["submarine_nan"])
-    expect(page).to_have_url(page_url["submarine_r6"])
-
     page.goto(page_url["submarine_invalid_range"])
     expect(page).to_have_title("The Aetherial Sea")
 

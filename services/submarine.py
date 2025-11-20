@@ -1,4 +1,4 @@
-from data.db_connect import cursor
+from instance.db_connect import cursor
 
 def get_area_name(areaId):
     cur = cursor()

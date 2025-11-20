@@ -1,6 +1,5 @@
 # 가상환경/DB
 .venv/
-data/
 __pycache__
 *.db
 
@@ -10,7 +9,7 @@ __pycache__
 *.png
 
 # 기타 테스트용 툴/파일
-data/api__.py
+instance/api__.py
 .env
 run.bat
 .DS_Store
