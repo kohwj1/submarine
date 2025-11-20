@@ -48,6 +48,7 @@ jobs:
         env:
           DISCORD: ${{ secrets.DISCORD }}
           SLACK: ${{ secrets.SLACK }}
+          SERVER: ${{ secrets.SERVER }}
 
       - uses: actions/upload-artifact@v4
         if: ${{ !cancelled() }}

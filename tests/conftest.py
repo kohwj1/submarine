@@ -34,6 +34,7 @@ def pytest_terminal_summary(terminalreporter, exitstatus, config):
     dotenv.load_dotenv()
     slack = os.getenv('SLACK')
     discord = os.getenv('DISCORD')
+    current_server = os.getenv('SERVER')
 
     passed = terminalreporter.stats.get('passed', [])
     failed = terminalreporter.stats.get('failed', [])
@@ -55,7 +56,7 @@ def pytest_terminal_summary(terminalreporter, exitstatus, config):
 
     #디코용 포맷
     payload = {
-        "content": f"## 테스트 수행 완료\n```{summary}```",
+        "content": f"## 테스트 수행 완료 - {current_server}\n```{summary}```",
         "username": "Test Result"
     }
 
