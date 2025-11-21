@@ -14,7 +14,7 @@
     </div>
     <div class="form-check form-switch mb-3">
         <input class="form-check-input" type="checkbox" role="switch" id="switchCheck" checked>
-        <label class="form-check-label" for="switchCheckChecked">스포일러 필터<i class="bi bi-question-circle-fill ms-1 help-icon" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="해제 시 모든 지역명이 필터 없이 표시됩니다."></i></label>
+        <label class="form-check-label" for="switchCheckChecked">스포일러 필터<i class="bi bi-question-circle-fill ms-1 help-icon" id="btn-tooltip" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="해제 시 모든 지역명이 필터 없이 표시됩니다."></i></label>
     </div>
     <ul class="list-group list-group-flush">
         {% for region in data %}
@@ -36,5 +36,6 @@
         {% endfor %}
     </ul>
 </div>
+<script src="../static/js/tooltip.js"></script>
 <script src="../static/js/weather.js"></script>
 {% endblock %}

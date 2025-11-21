@@ -33,7 +33,7 @@
     <div>
         <div class="form-check form-switch mb-3">
             <input class="form-check-input" type="checkbox" role="switch" id="switchCheck" checked>
-            <label class="form-check-label" for="switchCheckChecked">상위 보상만 보기<i class="bi bi-question-circle-fill ms-1 help-icon" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="해제 시 모든 보상이 표시됩니다."></i></label>
+            <label class="form-check-label" for="switchCheckChecked">상위 보상만 보기<i class="bi bi-question-circle-fill ms-1 help-icon" id="btn-tooltip" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="해제 시 모든 보상이 표시됩니다."></i></label>
         </div>
         <table class="table table-hover table-striped caption-top">
             <caption>사이트 데이터: v.{{patch_info}}</caption>
@@ -110,5 +110,6 @@
         </form>
     </div>
 </div>
+<script src="../static/js/tooltip.js"></script>
 <script src="../static/js/submarine.js"></script>
 {% endblock %}

@@ -1,4 +1,4 @@
-name: Server response Tests
+name: Basic Test
 
 on:
   push:
@@ -44,11 +44,20 @@ jobs:
           DATABASE: ${{ secrets.DATABASE }}
 
       - name: Run access test
-        run: pytest -k test_access.py --tracing=retain-on-failure
+        run: pytest tests/0_smoke --tracing=retain-on-failure
         env:
           DISCORD: ${{ secrets.DISCORD }}
           SLACK: ${{ secrets.SLACK }}
-          SERVER: ${{ secrets.SERVER }}
+          RUNNER: github
+          TEST_SCOPE: smoke
+
+      - name: Run E2E test
+        run: pytest tests/1_e2e --tracing=retain-on-failure
+        env:
+          DISCORD: ${{ secrets.DISCORD }}
+          SLACK: ${{ secrets.SLACK }}
+          RUNNER: github
+          TEST_SCOPE: e2e
 
       - uses: actions/upload-artifact@v4
         if: ${{ !cancelled() }}

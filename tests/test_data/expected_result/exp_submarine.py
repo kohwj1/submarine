@@ -5,3 +5,4 @@ reward_all = """
 🥇 오케스트리온 악보: Nature's Bounty
 """
 optimized_route = "6H > 6G"
+filter_keyword = "크리스탈"
