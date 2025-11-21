@@ -9,9 +9,9 @@ __pycache__
 *.png
 
 # 기타 테스트용 툴/파일
-instance/api__.py
+tests/results/
 .env
-run.bat
+*.bat
 .DS_Store
 PlaceName.py
 WeatherRate.py
