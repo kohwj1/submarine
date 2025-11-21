@@ -31,11 +31,7 @@ jobs:
           sqlite3 "$DATABASE" < db_init.sql
         env:
           DATABASE: ${{ secrets.DATABASE }}
-
-      - name: Replace file from original to variation
-        run: |
-          cp -f tests/test_data/PlaceName_ko_dawntrail.py /home/runner/.local/lib/python3.12/site-packages/EorzeaEnv/Data/PlaceName.py
-
+          
       - name: Start Flask Server
         run: |
           echo "Starting Flask server..."
