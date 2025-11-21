@@ -31,7 +31,7 @@ jobs:
           sqlite3 "$DATABASE" < db_init.sql
         env:
           DATABASE: ${{ secrets.DATABASE }}
-          
+
       - name: Start Flask Server
         run: |
           echo "Starting Flask server..."
@@ -44,14 +44,14 @@ jobs:
           DATABASE: ${{ secrets.DATABASE }}
 
       - name: Run access test
-        run: pytest tests/smoke --tracing=retain-on-failure
+        run: pytest tests/0_smoke --tracing=retain-on-failure
         env:
           DISCORD: ${{ secrets.DISCORD }}
           SLACK: ${{ secrets.SLACK }}
           RUNNER: github
 
       - name: Run E2E test
-        run: pytest tests/e2e --tracing=retain-on-failure
+        run: pytest tests/1_e2e --tracing=retain-on-failure
         env:
           DISCORD: ${{ secrets.DISCORD }}
           SLACK: ${{ secrets.SLACK }}

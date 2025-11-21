@@ -51,7 +51,7 @@ def test_weather_detail_invalid_param(page: Page, page_url):
     response = page.request.get(page_url["weather_detail_invalid_range"])
     expect(response).not_to_be_ok()
 
-# @pytest.mark.skipif(True, reason="EorzeaEnv does not support Dawntrail ko Placename...")
+@pytest.mark.skipif(True, reason="EorzeaEnv does not support Dawntrail ko Placename...")
 def test_rainbow(page: Page, page_url):
     response = page.request.get(page_url["rainbow"])
     expect(response).to_be_ok()
