@@ -83,8 +83,6 @@ def pytest_terminal_summary(terminalreporter, exitstatus, config):
         )
     }
 
-    response_discord = requests.post(slack, json=payload_discord)
-
     payload_slack = {
         "blocks": [
             {
@@ -132,6 +130,8 @@ def pytest_terminal_summary(terminalreporter, exitstatus, config):
         ]
     }
 
+    response_discord = requests.post(discord, json=payload_discord)
     response_slack = requests.post(slack, json=payload_slack)
 
-    # print(response)
+    # print(response_discord)
+    # print(response_slack)
