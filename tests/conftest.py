@@ -53,7 +53,7 @@ def pytest_terminal_summary(terminalreporter, exitstatus, config):
         return [rep.nodeid for rep in reports]
     
     def discord_embed(tc):
-        return "\n".join(f"• {name[8:].split('[')[0]}" for name in tc) or "-"
+        return "\n".join(f"• {name[2:].split('[')[0]}" for name in tc) or "-"
 
     passed_test = get_test_names(passed)
     failed_test = get_test_names(failed)
