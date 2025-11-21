@@ -36,6 +36,7 @@ def pytest_terminal_summary(terminalreporter, exitstatus, config):
     slack = os.getenv('SLACK')
     discord = os.getenv('DISCORD')
     runner = os.getenv('RUNNER')
+    test_scope = os.getenv('TEST_SCOPE')
 
     passed = terminalreporter.stats.get('passed', [])
     failed = terminalreporter.stats.get('failed', [])
@@ -74,7 +75,7 @@ def pytest_terminal_summary(terminalreporter, exitstatus, config):
     payload_discord = {
         "username": "Test Result",
         "content": (
-            f"## Summary\n"
+            f"## Summary- {test_scope}\n"
             f"```{summary}```\n"
             f"## Detail\n"
             f"{block_pass}\n"
