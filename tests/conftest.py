@@ -3,6 +3,7 @@ from playwright.sync_api import expect
 from test_data.urls import ROUTER
 import test_data.locator.loc_submarine as submarine
 import test_data.locator.loc_common as common
+import test_data.locator.loc_index as index
 import time, requests, dotenv, os
 
 expect.set_options(timeout=10_000)
@@ -25,6 +26,10 @@ def page_url():
 @pytest.fixture(scope="session")
 def common_locator():
     return common.PAGE_LOCATORS
+
+@pytest.fixture(scope="session")
+def index_locator():
+    return index.PAGE_LOCATORS
 
 @pytest.fixture(scope="session")
 def submarine_locator():

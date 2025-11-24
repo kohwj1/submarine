@@ -16,7 +16,7 @@
     <div class="dimmed"></div>
     <div class="main">
         <div class="container">
-            <div class="d-flex align-items-center justify-content-evenly upper-row">
+            <div class="d-flex align-items-center justify-content-evenly upper-row" id="site-menu">
                 <a href="/submarine" class="opc">
                     <div class="card h-100">
                         <img src="../static/img/cover_submarine.png" class="card-img-top" alt="Submarine">
@@ -47,7 +47,7 @@
             </div>
             <div class="lower-row d-flex flex-column justify-content-center align-items-center">
                 <div class="text-center placeholder-glow" id="eorzea-clock">
-                    <span class="eorzea timetype me-2">{{ data.guardian }},</span>
+                    <span class="eorzea timetype me-2" id="guardian">{{ data.guardian }},</span>
                     <span class="eorzea timetype me-4">ET</span>
                     <span class="eorzea" id="timer">--:--</span>            
                 </div>

@@ -1,8 +1,6 @@
-name: Basic Test
+name: Smoke Test
 
 on:
-  push:
-    branches: [ test ]
   pull_request:
     branches: [ main ]
 
@@ -43,21 +41,13 @@ jobs:
           FLASK_RUN_PORT: 5000
           DATABASE: ${{ secrets.DATABASE }}
 
-      - name: Run access test
+      - name: Run smoke test
         run: pytest tests/0_smoke --tracing=retain-on-failure
         env:
           DISCORD: ${{ secrets.DISCORD }}
           SLACK: ${{ secrets.SLACK }}
           RUNNER: github
           TEST_SCOPE: smoke
-
-      - name: Run E2E test
-        run: pytest tests/1_e2e --tracing=retain-on-failure
-        env:
-          DISCORD: ${{ secrets.DISCORD }}
-          SLACK: ${{ secrets.SLACK }}
-          RUNNER: github
-          TEST_SCOPE: e2e
 
       - uses: actions/upload-artifact@v4
         if: ${{ !cancelled() }}
