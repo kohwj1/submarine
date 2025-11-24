@@ -1,6 +1,6 @@
 import pytest, re
 from playwright.sync_api import Page, expect
-import tests.test_data.expected_result as expected_result
+import test_data.expected_result as expected_result
 
 def test_rewards_filter(page: Page, page_url, submarine_locator):
     """
