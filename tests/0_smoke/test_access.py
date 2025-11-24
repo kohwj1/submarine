@@ -1,6 +1,6 @@
 import pytest, re
 from playwright.sync_api import Page, expect
-import test_data.expected_result.exp_submarine as expected_result
+import test_data.expected_result as expected_result
 
 def test_index(page: Page, page_url):
     response = page.request.get(page_url["index"])

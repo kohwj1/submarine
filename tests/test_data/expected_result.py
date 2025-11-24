@@ -6,3 +6,4 @@ reward_all = """
 """
 optimized_route = "6H > 6G"
 filter_keyword = "크리스탈"
+guardian = ["Halone", "Menphina", "Thaliak", "Nymeia", "Llymlaen", "Oschon", "Byregot", "Rhalgr", "Azeyma", "Nald'thal", "Nophica", "Althyk"]
