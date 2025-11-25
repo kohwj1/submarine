@@ -2,6 +2,7 @@ import pytest
 from playwright.sync_api import expect
 from test_data.urls import ROUTER
 import test_data.locator.loc_submarine as submarine
+import test_data.locator.loc_weather as weather
 import test_data.locator.loc_common as common
 import test_data.locator.loc_index as index
 import time, requests, dotenv, os
@@ -34,6 +35,10 @@ def index_locator():
 @pytest.fixture(scope="session")
 def submarine_locator():
     return submarine.PAGE_LOCATORS
+
+@pytest.fixture(scope="session")
+def weather_locator():
+    return weather.PAGE_LOCATORS
 
 def pytest_terminal_summary(terminalreporter, exitstatus, config):
     dotenv.load_dotenv()

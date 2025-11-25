@@ -47,7 +47,7 @@ jobs:
           DISCORD: ${{ secrets.DISCORD }}
           SLACK: ${{ secrets.SLACK }}
           RUNNER: github
-          TEST_SCOPE: smoke
+          TEST_SCOPE: main
 
       - uses: actions/upload-artifact@v4
         if: ${{ !cancelled() }}
