@@ -1,3 +1,5 @@
+
+#test_submarine 기대결과
 reward_tier1 = "🥇 오케스트리온 악보: Nature's Bounty"
 reward_all = """
 🥉 고산 암염로열 메이플 수액투랄 옥수수
@@ -5,5 +7,12 @@ reward_all = """
 🥇 오케스트리온 악보: Nature's Bounty
 """
 optimized_route = "6H > 6G"
+
+#test_rewards 기대결과
 filter_keyword = "크리스탈"
+
+#test_index 기대결과
 guardian = ["Halone", "Menphina", "Thaliak", "Nymeia", "Llymlaen", "Oschon", "Byregot", "Rhalgr", "Azeyma", "Nald'thal", "Nophica", "Althyk"]
+
+#test_weather 기대결과
+weather_list = ['그림자바람', '눈', '눈보라', '뇌우', '모래먼지', '달모래먼지', '맑음', '바람', '방전', '번개', '비', '안개', '요마의 안개', '자기 폭풍', '작열파', '쾌청', '폭우', '폭풍', '흐림']

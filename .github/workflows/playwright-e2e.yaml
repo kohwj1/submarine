@@ -47,7 +47,7 @@ jobs:
           DISCORD: ${{ secrets.DISCORD }}
           SLACK: ${{ secrets.SLACK }}
           RUNNER: github
-          TEST_SCOPE: smoke
+          TEST_SCOPE: test
 
       - name: Run E2E test
         run: pytest tests/1_e2e --tracing=retain-on-failure
@@ -55,7 +55,7 @@ jobs:
           DISCORD: ${{ secrets.DISCORD }}
           SLACK: ${{ secrets.SLACK }}
           RUNNER: github
-          TEST_SCOPE: e2e
+          TEST_SCOPE: test
 
       - uses: actions/upload-artifact@v4
         if: ${{ !cancelled() }}

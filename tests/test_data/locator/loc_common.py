@@ -6,7 +6,7 @@ def btn_tooltip(page:Page) -> Locator:
     return page.locator(selector="#btn-tooltip")
 
 def layer_tooltip(page:Page) -> Locator:
-    return page.get_by_role("tooltip")
+    return page.get_by_role("tooltip", include_hidden=False)
 
 def footer(page:Page) -> Locator:
     return page.locator(selector="body > footer")
