@@ -11,4 +11,12 @@ def get_weather_by_place_name(place_name, step):
     return result
 
 
-print(get_weather_by_place_name("저지 라노시아", 100))
+if __name__ == '__main__':
+    import sys
+    try:
+        count = int(sys.argv[1])
+        print(get_weather_by_place_name("초승달 섬 남부", count))
+    except IndexError:
+        sys.stdout('Forecast count required')
+    except TypeError:
+        sys.stdout('Forecast count input must be integer')

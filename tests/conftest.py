@@ -68,24 +68,27 @@ def pytest_terminal_summary(terminalreporter, exitstatus, config):
     passed_test = get_test_names(passed)
     failed_test = get_test_names(failed)
     skipped_test = get_test_names(skipped)
+    count_passed = len(passed_test)
+    count_failed = len(failed_test)
+    count_skipped = len(skipped_test)
 
     summary = (
-        f"✅ Passed: {len(passed_test)}\n"
-        f"❌ Failed: {len(failed_test)}\n"
-        f"⚠️ Skipped: {len(skipped_test)}\n"
+        f"✅ Passed: {count_passed}\n"
+        f"❌ Failed: {count_failed}\n"
+        f"⚠️ Skipped: {count_skipped}\n"
         f"⏱ Duration: {duration:.2f} sec\n"
         f"-----------------------------------\n"
         f"💻 Runner: {runner}"
     )
 
-    block_pass = f"### ✅ {len(passed_test)} Passed\n```{discord_embed(passed_test)}```"
-    block_fail = f"### ❌ {len(failed_test)} Failed\n```{discord_embed(failed_test)}```"
-    block_skip = f"### ⚠️ {len(skipped_test)} Skipped\n```{discord_embed(skipped_test)}```"
+    block_pass = f"### ✅ {count_passed} Passed\n```{discord_embed(passed_test)}```"
+    block_fail = f"### ❌ {count_failed} Failed\n```{discord_embed(failed_test)}```"
+    block_skip = f"### ⚠️ {count_skipped} Skipped\n```{discord_embed(skipped_test)}```"
 
     payload_discord = {
         "username": "Test Result",
         "content": (
-            f"## Summary- {test_scope}\n"
+            f"## Summary - {test_scope}\n"
             f"```{summary}```\n"
             f"## Detail\n"
             f"{block_pass}\n"
@@ -100,7 +103,7 @@ def pytest_terminal_summary(terminalreporter, exitstatus, config):
                 "type": "header",
                 "text": {
                     "type": "plain_text",
-                    "text": "Summary"
+                    "text": f"Summary - {test_scope}"
                 }
             },
             {
@@ -108,6 +111,13 @@ def pytest_terminal_summary(terminalreporter, exitstatus, config):
                 "text": {
                     "type": "mrkdwn",
                     "text": f"```{summary}```"
+                }
+            },
+            {
+                "type": "header",
+                "text": {
+                    "type": "plain_text",
+                    "text": "Detail"
                 }
             },
             {
