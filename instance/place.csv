@@ -66,7 +66,7 @@
 66,ew,기타,올드 샬레이안,Old Sharlayan,normal,0
 67,ew,기타,라비린토스,Labyrinthos,normal,0
 68,ew,기타,비탄의 바다,Mare Lamentorum,normal,0
-69,ew,기타,울티마 툴레,Ultima Thule,normal,0
+69,ew,기타,울티마 툴레,Ultima Thule,normal,1
 70,ew,기타,엘피스,Elpis,normal,1
 71,dt,기타,리빙 메모리,Living Memory,normal,1
 72,ew,기타,무인도 (이름 없는 섬),Unnamed Island,normal,0
@@ -76,3 +76,6 @@
 76,sb,특수 필드,에우레카: 히다토스 지대,Eureka Hydatos,battle,0
 77,sb,특수 필드,남부 보즈야 전선,Bozjan Southern Front,battle,0
 78,sb,특수 필드,자트노르 고원,Zadnor,battle,0
+79,dt,특수 필드,초승달 섬 남부,South Horn,battle,0
+80,dt,특수 필드,동경의 만,Sinus Ardorum,normal,0
+81,dt,특수 필드,파엔나,Phaenna,normal,0

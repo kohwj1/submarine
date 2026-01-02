@@ -5,7 +5,7 @@ def toggle_switch(page: Page) -> Locator:
     return page.get_by_role("switch")
 
 def table_first_row(page:Page) -> Locator:
-    return page.locator(selector="#submarine-tbody > tr:nth-child(1) > td:nth-child(4)")
+    return page.locator(selector="#submarine-tbody > tr:nth-child(1) > td:nth-child(3)")
 
 def btn_display_calculator(page:Page) -> Locator:
     return page.get_by_label("calulator-display")

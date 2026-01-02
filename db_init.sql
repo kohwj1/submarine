@@ -5,7 +5,6 @@ CREATE TABLE area
   name     TEXT    NULL,
   reqRank  INTEGER NOT NULL,
   exp      INTEGER NOT NULL DEFAULT 0,
-  minSpec  INTEGER NULL,
   distance INTEGER NULL,
   time     INTEGER NULL
 );

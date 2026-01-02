@@ -41,10 +41,10 @@
                 <tr>
                 <th scope="col">해역명</th>
                 <th scope="col">탐사 경험치</th>
-                <th scope="col">탐사 성능 기준
-                    <i class="bi bi-question-circle-fill ms-1 help-icon" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="높은 등급의 아이템을 획득하기 위해 필요한 최소 성능치입니다."></i>
                 </th>
-                <th scope="col">보상</th>
+                <th scope="col">보상
+                    <i class="bi bi-question-circle-fill ms-1 help-icon" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="아이템명 클릭 시 공식 가이드로 이동합니다."></i>
+                </th>
                 <th scope="col">발견 해역</th>
                 </tr>
             </thead>
@@ -53,7 +53,6 @@
                     <tr class="select-area">
                         <td class="area-name">{{ row.name }}<br><small>Rank.{{ row.reqRank }}</small></td>
                         <td>{{ "{:,}".format(row.exp) }}</td>
-                        <td>{{ row.minSpec }}</td>
                         <td>
                             <div class="tier-hide">🥉 {% for item in row.rewards.tier0 %}<a class="official-guide tier0" href="https://guide.ff14.co.kr/lodestone/db/item/{{ item.itemId }}" target="_blank">{{ item.name }}</a>{% endfor %}</div>
                             <div class="tier-hide">🥈 {% for item in row.rewards.tier1 %}<a class="official-guide tier1" href="https://guide.ff14.co.kr/lodestone/db/item/{{ item.itemId }}" target="_blank">{{ item.name }}</a>{% endfor %}</div>
