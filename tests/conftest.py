@@ -121,13 +121,6 @@ def pytest_terminal_summary(terminalreporter, exitstatus, config):
                 }
             },
             {
-                "type": "header",
-                "text": {
-                    "type": "plain_text",
-                    "text": "Detail"
-                }
-            },
-            {
                 "type": "section",
                 "text": {
                     "type": "mrkdwn",
