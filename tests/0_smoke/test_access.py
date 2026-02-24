@@ -4,24 +4,24 @@ import test_data.expected_result as expected_result
 
 def test_index(page: Page, page_url):
     response = page.request.get(page_url["index"])
-    expect(response).to_be_ok()
+    assert response.ok
 
 def test_submarine_redirect(page: Page, page_url):
     response = page.request.get(page_url["submarine"])
     #리다이렉트 로직으로 정상 페이지로 이동시켜 주는 경우, 실제 응답은 302 --> 200 순으로 수행되므로 최종적으로 200인지 여부를 검증
-    expect(response).to_be_ok()
+    assert response.ok
 
 def test_submarine_nan(page: Page, page_url):
     response = page.request.get(page_url["submarine_nan"])
-    expect(response).to_be_ok()
+    assert response.ok
 
 def test_submarine_invalid_param(page: Page, page_url):
     response = page.request.get(page_url["submarine_invalid_range"])
-    expect(response).not_to_be_ok()
+    assert not response.ok
 
 def test_submarine_valid_param(page: Page, page_url):
     response = page.request.get(page_url["submarine_r6"])
-    expect(response).to_be_ok()
+    assert response.ok
 
 def test_navigate_api(page: Page, page_url):
     response = page.request.post(
@@ -33,29 +33,29 @@ def test_navigate_api(page: Page, page_url):
 
 def test_submarine_rewards(page: Page, page_url):
     response = page.request.get(page_url["rewards"])
-    expect(response).to_be_ok()
+    assert response.ok
 
 def test_weather(page: Page, page_url):
     response = page.request.get(page_url["weather"])
-    expect(response).to_be_ok()
+    assert response.ok
 
 def test_weather_detail_param_missing(page: Page, page_url):
     response = page.request.get(page_url["weather_detail_missing"])
-    expect(response).not_to_be_ok()
+    assert not response.ok
 
 def test_weather_detail_nan(page: Page, page_url):
     response = page.request.get(page_url["weather_detail_nan"])
-    expect(response).not_to_be_ok()
+    assert not response.ok
 
 def test_weather_detail_invalid_param(page: Page, page_url):
     response = page.request.get(page_url["weather_detail_invalid_range"])
-    expect(response).not_to_be_ok()
+    assert not response.ok
 
 @pytest.mark.skipif(True, reason="EorzeaEnv does not support Dawntrail ko Placename...")
 def test_rainbow(page: Page, page_url):
     response = page.request.get(page_url["rainbow"])
-    expect(response).to_be_ok()
+    assert response.ok
     
 def test_convert(page: Page, page_url):
     response = page.request.get(page_url["convert"])
-    expect(response).to_be_ok()
+    assert response.ok
