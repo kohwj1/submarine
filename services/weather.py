@@ -3,7 +3,7 @@ from EorzeaEnv import EorzeaLang, EorzeaTime, EorzeaWeather, EorzeaPlaceName, Eo
 from instance.db_connect import cursor
 from instance.weather_msg import weather_msg
 
-region_category = ["라노시아", "검은장막 숲", "다날란", "이슈가르드 주변 지역", "기라바니아", "동방 지역", "일사바드 대륙", "투랄 대륙", "노르브란트", "기타", "특수 필드"]
+region_category = ["라노시아", "검은장막 숲", "다날란", "이슈가르드 주변 지역", "기라바니아", "동방 지역", "일사바드 대륙", "투랄 대륙", "노르브란트", "기타", "특수 필드", "우주 개척"]
 unsundered = ["Elpis","Heritage Found","Solution Nine","Living Memory", "Sinus Ardorum", "Phaenna", "Oizys", "Auxesia"]
 norvrandt = ["The Crystarium","Eulmore","Lakeland", "Kholusia", "Amh Araeng", "Il Mheg", "The Rak'tika Greatwood", "The Tempest"]
 
