@@ -15,7 +15,7 @@ if __name__ == '__main__':
     import sys
     try:
         count = int(sys.argv[1])
-        print(get_weather_by_place_name("초승달 섬 남부", count))
+        print(get_weather_by_place_name("아욱세시아", count))
     except IndexError:
         sys.stdout('Forecast count required')
     except TypeError:
