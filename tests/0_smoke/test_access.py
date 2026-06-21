@@ -59,3 +59,7 @@ def test_rainbow(page: Page, page_url):
 def test_convert(page: Page, page_url):
     response = page.request.get(page_url["convert"])
     assert response.ok
+
+def test_estate(page: Page, page_url):
+    response = page.request.get(page_url["estate"])
+    assert response.ok

@@ -53,6 +53,24 @@ CREATE TABLE place
   isSpoiler INTEGER NULL
 );
 
+CREATE TABLE housingArea
+(
+  cityId INTEGER NOT NULL,
+  name   TEXT    NULL
+);
+
+CREATE TABLE estate
+(
+  saleId   integer NOT NULL UNIQUE,
+  cityId   INTEGER NOT NULL,
+  landType TEXT    NULL    ,
+  addDiv   INTEGER NULL    ,
+  addStr   INTEGER NULL    ,
+  price    INTEGER NOT NULL,
+  regDate  INTEGER NULL    ,
+  isLatest INTEGER NULL
+);
+
 .mode csv
 .import instance/area.csv area
 .import instance/navigation.csv navigation
@@ -61,5 +79,7 @@ CREATE TABLE place
 .import instance/rewards.csv rewards
 .import instance/items.csv items
 .import instance/place.csv place
+.import instance/housingArea.csv housingArea
+.import instance/estate.csv estate
 
 .exit

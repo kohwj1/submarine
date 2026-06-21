@@ -15,5 +15,6 @@ ROUTER = {
     "weather_detail_invalid_range": f"{BASE_URL}/weather/detail?id=999",
     "rainbow": f"{BASE_URL}/rainbow",
     "convert": f"{BASE_URL}/convert",
+    "estate": f"{BASE_URL}/estate",
     "api_navigate": f"{BASE_URL}/api/submarine/navigate",
 }
