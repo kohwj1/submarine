@@ -2,6 +2,7 @@ from flask import Flask, render_template, request, redirect
 from services.patchinfo import patch_info
 import services.weather as weather
 import services.submarine as submarine
+import services.estate as estate
 from route.api_submarine import api_submarine
 from route.api_weather import api_weather
 from collections import defaultdict
@@ -121,6 +122,14 @@ def page_rainbow():
 @app.route('/convert')
 def page_convert():
     return render_template('convert.html')
+
+@app.route('/estate')
+def page_estate():
+    last_update_date = estate.last_updated()
+    now = estate.get_cycle()
+    data = estate.get_estate_list()
+    # print(now, data)
+    return render_template('estate.html', last_updated=last_update_date, status=now, data=data)
 
 if __name__ == '__main__':
     app.run()
