@@ -3,14 +3,14 @@
 {% block title %}아이테리스 부동산 :: TestPage{% endblock %}
 {% block content %}
 <div class="container">
-  <h3 class="text-center eorzea">Etheirys Real Estate</h3>
-  <p class="text-center">에오르제아/동방의 중/대형 매물을 소개합니다</p>
-  <div class="alert alert-light text-center mt-5 mb-5" role="alert">{{ status.msg }}</div>
-  <h4 class="mb-3">중/대형 매물 목록
-    <i class="bi bi-question-circle-fill ms-1 help-icon" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="각 거주구에서 현재 정비중인 중형/대형 토지 목록입니다."></i>
+  <h3 class="text-center eorzea">Etheirys Estate</h3>
+  <p class="text-center">에오르제아와 동방의 중/대형 매물을 소개합니다</p>
+  <div class="alert alert-light text-center mt-5 mb-5" role="alert"><strong>{{ status.msg }}</strong></div>
+  <h5 class="mb-3">중/대형 매물 목록
+    <i class="bi bi-question-circle-fill ms-1 help-icon" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="초코보 월드의 각 거주구에서 현재 정비중인 중형/대형 토지 목록입니다."></i>
   </h4>
   <table class="table table-hover table-striped caption-top">
-    <caption>업데이트일: {{ last_updated }}</caption>
+    <caption>매물 정보 업데이트일: {{ last_updated }}</caption>
     <thead>
       <tr>
         <th scope="col">매물</th>
