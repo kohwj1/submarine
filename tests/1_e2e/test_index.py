@@ -19,7 +19,7 @@ def test_menu_all(page: Page, page_url, index_locator):
     :type index_locator: dict[str, Callable[..., Locator]]
     """
     btn_all = index_locator["btn_all"](page)
-    link_address = [page_url["submarine_r6"], page_url["weather"], page_url["convert"]]
+    link_address = [page_url["submarine_r6"], page_url["weather"], page_url["estate"], page_url["convert"]]
 
     for i in range(len(btn_all)):
         page.goto(page_url["index"])
