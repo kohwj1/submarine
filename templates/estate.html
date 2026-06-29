@@ -18,16 +18,22 @@
       </tr>
     </thead>
     <tbody>
-      {% for item in data %}
-      <tr>
-          {% if item.landType == "l" %}
-            <td>{{ item.city }} {{ item.add1 }}구 {{ item.add2 }}번지<span class="badge text-bg-primary ms-2">대형</span></td>
-          {% else %}
-            <td>{{ item.city }} {{ item.add1 }}구 {{ item.add2 }}번지</td>
-          {% endif %}
-          <td>{{ item.price }}길</td>
-      </tr>
-      {% endfor %}
+      {% if data %}
+        {% for item in data %}
+        <tr>
+            {% if item.landType == "l" %}
+              <td>{{ item.city }} {{ item.add1 }}구 {{ item.add2 }}번지<span class="badge text-bg-primary ms-2">대형</span></td>
+            {% else %}
+              <td>{{ item.city }} {{ item.add1 }}구 {{ item.add2 }}번지</td>
+            {% endif %}
+            <td><span class="estate-price">{{ "{:,}".format(item.price) }}</span>길</td>
+        </tr>
+        {% endfor %}
+      {% else %}
+        <tr>
+          <td colspan="2" class="text-center">중/대형 매물이 없어요 :(</td>
+        </tr>
+      {% endif %}
     </tbody>
   </table>
 </div>

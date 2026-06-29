@@ -6,9 +6,13 @@ def last_updated():
 
     cur.execute("""SELECT regDate 
                 FROM estate
-                WHERE isLatest = 1""")
+                WHERE isLatest = 1
+                ORDER BY regDate DESC""")
     result = cur.fetchone()
-    updated_date = str(result[0])
+    if result:
+        updated_date = str(result[0])
+    else:
+        updated_date = date.today().strftime("%Y%m%d")
 
     return f"{updated_date[0:4]}-{updated_date[4:6]}-{updated_date[6:8]}"
 
